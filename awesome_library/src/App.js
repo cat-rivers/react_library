@@ -1,7 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
+import Home from "./components/Home"
+import Search from "./components/Search"
+import MyPage from "./components/MyPage"
+import Login from "./components/Login"
+import Signup from "./components/Signup"
+import BookById from "./components/BookById"
+import SignupSuccessful from "./components/SignupSuccessful"
 
 function App() {
-  
+
   const padding = { padding: 5 }
 
   return (
@@ -13,7 +20,7 @@ function App() {
         <Link style={padding} to="/signupsuccessful">Sign-up successful</Link>
         <Link style={padding} to="/login">Login</Link>
         <Link style={padding} to="/signup">Sign-up</Link>
-        <Link style={padding} to="/bookid">Book</Link>
+        <Link style={padding} to="/bookbyid">Book by ID</Link>
       </div>
       <Routes>
         <Route path="/" element={<Home/>} />
@@ -22,7 +29,7 @@ function App() {
         <Route path="/signupsuccessful" element={<SignupSuccessful/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
-        <Route path="/book/{id}" element={<IndividualBook/>} />
+        <Route path="/book/{id}" element={<BookById/>} />
       </Routes>
     </Router>
   )
