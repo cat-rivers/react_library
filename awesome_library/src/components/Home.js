@@ -1,17 +1,17 @@
 import React from "react";
+import "./Home.css";
+
 
 const Home = () => {
     return (
         <div>
-            <div className="navbar">
-                <navmenu>
-                    <navlink to="home" active style>Home</navlink>
-                    <navlink to="search" active style>Search</navlink>
-                    <navlink to="signup" active style>Signup</navlink>
-                    <navlink to="login" active style>Login</navlink>
-                </navmenu>
+            <div className="navbar">    
+                <div className="menuitem">Home &nbsp; &nbsp;</div>
+                <div className="menuitem">Search &nbsp; &nbsp;</div> 
+                <div className="menuitem">Signup &nbsp; &nbsp;</div> 
+                <div className="menuitem">Login &nbsp; &nbsp;</div> 
             </div>
-            <div className="body">
+            <div className="bodyContainer">
                 <h2> Library </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Nunc accumsan in odio dapibus elementum. Nulla lectus purus, 
