@@ -1,16 +1,3 @@
-.navbar {
-    background-color: rgb(147, 228, 222);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height:60px;
-}
-.menuitem {
-    display: inline-block;
-    margin: 20px;  
-}
-
 .bodyContainer {
     margin-top: 100px;
     max-height: 20px;

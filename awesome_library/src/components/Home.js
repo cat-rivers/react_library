@@ -1,16 +1,10 @@
 import React from "react";
 import "./Home.css";
-
+import Header from "./Header";
 
 const Home = () => {
     return (
         <div>
-            <div className="navbar">    
-                <div className="menuitem">Home &nbsp; &nbsp;</div>
-                <div className="menuitem">Search &nbsp; &nbsp;</div> 
-                <div className="menuitem">Signup &nbsp; &nbsp;</div> 
-                <div className="menuitem">Login &nbsp; &nbsp;</div> 
-            </div>
             <div className="bodyContainer">
                 <h2> Library </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
