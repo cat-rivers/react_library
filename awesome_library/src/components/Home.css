@@ -1,0 +1,31 @@
+.navbar {
+    background-color: rgb(147, 228, 222);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height:60px;
+}
+.menuitem {
+    display: inline-block;
+    margin: 20px;  
+}
+
+.bodyContainer {
+    margin-top: 100px;
+    max-height: 20px;
+}
+
+.footer {
+    background-color: rgb(155, 236, 153);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-height:150px;
+}
+
+.footer img {
+    max-width: 20%;
+    max-height: 20%;
+}
