@@ -12,24 +12,29 @@ function App() {
   const padding = { padding: 5 }
 
   return (
-    <Router>
-      <nav>
-        <Link style={padding} to="/">Home</Link>
-        <Link style={padding} to="/search">Search</Link>
-        <Link style={padding} to="/login">Login</Link>
-        <Link style={padding} to="/signup">Sign-up</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/search" element={<Search/>} />
-        <Route path="/mypage" element={<MyPage/>} />
-        <Route path="/signupsuccessful" element={<SignupSuccessful/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/book/{id}" element={<BookById/>} />
-      </Routes>
-    </Router>
-  )
+    {/*
+      <Router>
+        <nav>
+          <Link style={padding} to="/">Home</Link>
+          <Link style={padding} to="/search">Search</Link>
+          <Link style={padding} to="/login">Login</Link>
+          <Link style={padding} to="/signup">Sign-up</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home/>} />
+          <Route path="/search" element={<Search/>} />
+          <Route path="/mypage" element={<MyPage/>} />
+          <Route path="/signupsuccessful" element={<SignupSuccessful/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<Signup/>} />
+          <Route path="/book/{id}" element={<BookById/>} />
+        </Routes>
+      </Router>
+    */}
+      
+    
+    
+  );
 }
 
 export default App;
