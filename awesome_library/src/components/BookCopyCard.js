@@ -1,7 +1,7 @@
-const BookCopyCard = () => {
+const BookCopyCard = ({ status }) => {
   return (
     <>
-      <div> I am available!</div>
+      <div>{status}</div>
     </>
   );
 };
