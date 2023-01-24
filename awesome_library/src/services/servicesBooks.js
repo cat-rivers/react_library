@@ -9,4 +9,4 @@ const editBook = (changedbook, id) => {
   return axios.put(`${baseUrl}/${id}`, changedbook);
 };
 
-export { getAllBooks, editBook };
+export default { getAllBooks, editBook };
