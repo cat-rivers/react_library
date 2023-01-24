@@ -1,12 +1,12 @@
 import BookCard from "./components/BookCard";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home";
-import Search from "./components/Search";
-import MyPage from "./components/MyPage";
-import Login from "./components/Login";
-import Signup from "./components/Signup";
-import BookById from "./components/BookById";
-import SignupSuccessful from "./components/SignupSuccessful";
+// import Home from "./components/Home";
+// import Search from "./components/Search";
+// import MyPage from "./components/MyPage";
+// import Login from "./components/Login";
+// import Signup from "./components/Signup";
+// import BookById from "./components/BookById";
+// import SignupSuccessful from "./components/SignupSuccessful";
 
 function App() {
   const padding = { padding: 5 };
