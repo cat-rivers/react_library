@@ -1,6 +1,5 @@
 import BookCopyCard from "./BookCopyCard";
 import "./BookCard.css";
-import axios from "axios";
 
 const BookCard = ({ book }) => (
   <div className="bookCard">
