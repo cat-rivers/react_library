@@ -13,15 +13,12 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <nav>
         <Link style={padding} to="/">Home</Link>
         <Link style={padding} to="/search">Search</Link>
-        <Link style={padding} to="/mypage">My page</Link>
-        <Link style={padding} to="/signupsuccessful">Sign-up successful</Link>
         <Link style={padding} to="/login">Login</Link>
         <Link style={padding} to="/signup">Sign-up</Link>
-        <Link style={padding} to="/bookbyid">Book by ID</Link>
-      </div>
+      </nav>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/search" element={<Search/>} />
