@@ -1,6 +1,7 @@
-import getAllBooks from "../services/servicesBooks";
+import { getAllBooks } from "../services/servicesBooks";
 import { useEffect, useState } from "react";
 import BookCopyCard from "./BookCopyCard";
+import "./BookCard.css";
 
 const BookCard = props => {
   const [allBooks, setAllBooks] = useState([]);
@@ -23,9 +24,11 @@ const BookCard = props => {
         Book
         {console.log(getAllBooks())}
         <div className="bookInfo">
-          <p>{book.author}</p>
-          <h2>{book.title}</h2>
-          <p>{book.published}</p>
+          <div className="header">
+            <p>{book.author}</p>
+            <h2>{book.title}</h2>
+            <p>{book.published.substr(0, 4)}</p>
+          </div>
           <p>{book.description}</p>
         </div>
         <div className="bookStatus">

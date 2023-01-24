@@ -26,13 +26,13 @@ function createNewUser(newUser) {
   return axios.post(baseUrlUsers, newUser).then(response => response.data);
 }
 
-// const funcs = {
-//   getAllBooks,
-//   editBook,
-//   editUser,
-//   getAllUsers,
-//   deleteUser,
-//   createNewUser,
-// };
+export {
+  getAllBooks,
+  editBook,
+  editUser,
+  getAllUsers,
+  deleteUser,
+  createNewUser,
+};
 
-export default getAllBooks;
+// export default getAllBooks;

@@ -1,5 +1,9 @@
 const BookCopyCard = () => {
-  return <di> I am available!</di>;
+  return (
+    <>
+      <div> I am available!</div>
+    </>
+  );
 };
 
 export default BookCopyCard;
