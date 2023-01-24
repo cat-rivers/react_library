@@ -9,7 +9,6 @@ import SignupSuccessful from "./components/SignupSuccessful"
 import Header from "./components/Header"
 
 function App() {
-
   return (
     <Router>
       <Routes>
