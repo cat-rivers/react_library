@@ -2,29 +2,31 @@ import axios from "axios";
 const baseUrlBooks = "http://localhost:3001/books";
 const baseUrlUsers = "http://localhost:3001/users";
 
-const getAllBooks = () => {
-  return axios.get(baseUrlBooks).then(repsonse => Response.data);
-};
+function getAllBooks() {
+  return axios.get(baseUrlBooks).then(response => response.data);
+}
 
-const editBook = (changedbook, id) => {
+console.log(getAllBooks());
+
+function editBook(changedbook, id) {
   return axios.put(`${baseUrlBooks}/${id}`, changedbook);
-};
+}
 
-const getAllUsers = () => {
-  return axios.get(baseUrlUsers).then(repsonse => Response.data);
-};
+function getAllUsers() {
+  return axios.get(baseUrlUsers).then(response => response.data);
+}
 
-const editUser = (changedUser, id) => {
+function editUser(changedUser, id) {
   return axios.put(`${baseUrlUsers}/${id}`, changedUser);
-};
+}
 
-const deleteUser = id => {
+function deleteUser(id) {
   return axios.delete(`${baseUrlUsers}/${id}`).then(response => response.data);
-};
+}
 
-const createNewUser = newUser => {
+function createNewUser(newUser) {
   return axios.post(baseUrlUsers, newUser).then(response => response.data);
-};
+}
 
 export {
   getAllBooks,
@@ -34,3 +36,5 @@ export {
   deleteUser,
   createNewUser,
 };
+
+// export default getAllBooks;
