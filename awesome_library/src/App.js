@@ -22,6 +22,7 @@ function App() {
           <Route path="search/book/{id}" element={<BookById/>} />
         </Route>
       </Routes>
+      <BookById />
     </Router>
   )
 }
