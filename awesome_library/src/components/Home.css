@@ -1,5 +1,5 @@
 .navbar {
-    background-color: rgb(132, 157, 196);
+    background-color: rgb(147, 228, 222);
     position: absolute;
     top: 0;
     left: 0;
@@ -17,15 +17,15 @@
 }
 
 .footer {
-    background-color: rgb(28, 184, 59);
+    background-color: rgb(155, 236, 153);
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height:150px;
+    max-height:150px;
 }
 
 .footer img {
-    width: 180px;
-    height: 150px;
+    max-width: 20%;
+    max-height: 20%;
 }
