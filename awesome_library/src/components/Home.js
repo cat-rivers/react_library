@@ -23,7 +23,7 @@ const Home = () => {
                 </p>
             </div>
             <div className="footer">
-                <img src="https://reactjs.org/logo-og.png" alt="React Image" />
+                <img src={require("./book.png")} alt="Book image" />
             </div>
         </div>
     )
