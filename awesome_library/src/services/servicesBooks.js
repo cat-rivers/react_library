@@ -6,6 +6,8 @@ function getAllBooks() {
   return axios.get(baseUrlBooks).then(response => response.data);
 }
 
+console.log(getAllBooks());
+
 function editBook(changedbook, id) {
   return axios.put(`${baseUrlBooks}/${id}`, changedbook);
 }

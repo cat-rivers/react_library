@@ -1,4 +1,4 @@
-import BookCard from "./components/BookCard";
+import BookCardContainer from "./components/BookContainer";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 // import Home from "./components/Home";
 // import Search from "./components/Search";
@@ -12,7 +12,7 @@ function App() {
   const padding = { padding: 5 };
 
   return (
-    <BookCard />
+    <BookCardContainer />
     // <Router>
     //   <nav>
     //     <Link style={padding} to="/">
