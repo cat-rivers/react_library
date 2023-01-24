@@ -6,14 +6,14 @@ import Login from "./components/Login"
 import Signup from "./components/Signup"
 import BookById from "./components/BookById"
 import SignupSuccessful from "./components/SignupSuccessful"
-import Layout from "./components/Layout"
+import Header from "./components/Header"
 
 function App() {
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/" element={<Header/>}>
           <Route index element={<Home />} />
           <Route path="search" element={<Search/>} />
           <Route path="mypage" element={<MyPage/>} />
