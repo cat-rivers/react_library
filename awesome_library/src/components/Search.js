@@ -1,21 +1,18 @@
 import React, { useState } from "react";
 import Scroll from "./Scroll";
 import SearchList from "./SearchList";
-import BookCardContainer from "./BookContainer";
 
-function Search() {
+function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
+  const [searchGo, setSearchGo] = useState("");
 
   const filteredBooks = bookDetails.filter((book) => {
     return (
-      book.title.toLowerCase().includes(searchField.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchField.toLowerCase()) ||
-      book.isbn.includes(searchField)
+      book.title.toLowerCase().includes(searchGo.toLowerCase()) ||
+      book.author.toLowerCase().includes(searchGo.toLowerCase()) ||
+      book.isbn.includes(searchGo)
     );
   });
-  const handleChange = (e) => {
-    setSearchField(e.target.value);
-  };
 
   function searchList() {
     return (
@@ -25,9 +22,13 @@ function Search() {
     );
   }
 
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
+
   const handleClick = (e) => {
     e.preventDefault();
-    searchList();
+    setSearchGo(searchField);
   };
 
   return (
