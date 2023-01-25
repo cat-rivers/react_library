@@ -34,9 +34,7 @@ function Search({ bookDetails }) {
 
   return (
     <section className="search-section">
-      <div>
-        <h1 className="search-title">Search</h1>
-      </div>
+
       <form onSubmit={handleSubmit}>
         <input
           type="search"

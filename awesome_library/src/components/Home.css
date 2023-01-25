@@ -1,3 +1,10 @@
 .bodyContainer {
-  margin-top: 10px;
+    margin: 50px 100px;   
+}
+
+h1 {
+    text-align: center;
+    font-style: italic;
+    font-family: 'Lucida Handwriting';
+    color: rgb(109, 8, 102);
 }
