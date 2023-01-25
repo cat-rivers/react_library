@@ -45,17 +45,16 @@ function Search({ bookDetails }) {
         />
         <button type="submit"> Submit </button>
       </form>
-      <br />
       {searchGo === "" ? (
         <div>
-          <div className="search-subtitle">
-            <h3>All books:</h3>
+          <div>
+            <h3 className="search-subtitle">All books</h3>
           </div>
           {searchList()}
         </div>
       ) : (
         <div>
-          <h3 classname="search-subtitle">Search results:</h3>
+          <h3 className="search-subtitle">Search results</h3>
           {searchList()}
         </div>
       )}

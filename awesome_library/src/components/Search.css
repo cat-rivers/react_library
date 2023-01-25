@@ -8,12 +8,14 @@
 }
 
 .search-title {
-  margin-top: 2vh;
-  margin-bottom: 3vh;
+  margin-top: 1vh;
+  margin-bottom: 2vh;
 }
 
 .search-subtitle {
-  margin: 0px;
+  text-align: left;
   position: relative;
-  left: 3%;
+  left: 18%;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
