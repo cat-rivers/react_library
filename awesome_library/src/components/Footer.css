@@ -1,0 +1,15 @@
+.footer {
+    background-color: rgb(155, 236, 153);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:60px;
+}
+
+.footer img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 150px;
+}

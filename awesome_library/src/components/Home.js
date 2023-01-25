@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import Header from "./Header";
+
 
 
 const Home = () => {
@@ -17,13 +17,10 @@ const Home = () => {
                     neque justo tincidunt purus, eu egestas massa turpis at arcu.
                 </p>
             </div>
-            <div className="footer">
-                <img src={require("./book.png")} alt="Book image" />
-            </div>
+
         </div>
     )
 }
   
-
 export default Home;
  
