@@ -1,20 +1,5 @@
 .bodyContainer {
-    margin-top: 100px;
-    max-height: 20px;
+    margin-top: 10px;
+   
 }
 
-.footer {
-    background-color: rgb(155, 236, 153);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height:100px;
-}
-
-.footer img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 150px;
-}

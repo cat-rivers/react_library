@@ -7,12 +7,14 @@ import Signup from "./components/Signup"
 import BookById from "./components/BookById"
 import SignupSuccessful from "./components/SignupSuccessful"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
+
 
 function App() {
   return (
     <Router>
+      <Header/>
       <Routes>
-        <Route path="/" element={<Header/>}>
           <Route index element={<Home />} />
           <Route path="search" element={<Search/>} />
           <Route path="mypage" element={<MyPage/>} />
@@ -20,8 +22,8 @@ function App() {
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<Signup/>} />
           <Route path="search/book/{id}" element={<BookById/>} />
-        </Route>
       </Routes>
+      <Footer/>
     </Router>
   )
 }

@@ -11,9 +11,6 @@ const Search = () => {
                     <button type="submit"> Submit </button>
                 </form>
             </div>
-            <div className="footer">
-                <img src={require("./book.png")} alt="Book image" />
-            </div>
         </div>
     )
 }
