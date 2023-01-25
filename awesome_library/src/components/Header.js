@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Header.css"
-
+import LoginPopup from "./LoginPopup";
 
 const Header = () => {
   return (
@@ -14,7 +14,7 @@ const Header = () => {
             <Link className="menuitem" to="/search">Search</Link>
           </li>
           <li className="menuitem">
-            <Link className="menuitem" to="/login">Login</Link>
+            <LoginPopup/>
           </li>
           <li className="menuitem">
             <Link className="menuitem" to="/signup">Sign up</Link>
