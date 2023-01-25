@@ -15,6 +15,10 @@ body {
 	padding: 20px;
 }
 
+#box {
+	background-color: rgb(207, 237, 252) ;
+  } 
+
 .green {
 	background-color: #28ea9c;
 }
