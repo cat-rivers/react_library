@@ -1,21 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
+import Scroll from "./Scroll";
+import SearchList from "./SearchList";
+import "./Search.css";
 
-const Search = () => {
+function Search({ bookDetails }) {
+  const [searchField, setSearchField] = useState("");
+  const [searchGo, setSearchGo] = useState("");
+
+  const filteredBooks = bookDetails.filter((book) => {
     return (
-        <div>
-            <div className="bodyContainer">
-                <h2> Search for books </h2>
-                <form>
-                    <label> Search: </label>
-                    <input/> <br/> <br/>
-                    <button type="submit"> Submit </button>
-                </form>
-            </div>
-            <div className="footer">
-                <img src={require("./book.png")} alt="Book image" />
-            </div>
-        </div>
-    )
+      book.title.toLowerCase().includes(searchGo.toLowerCase()) ||
+      book.author.toLowerCase().includes(searchGo.toLowerCase()) ||
+      book.isbn.includes(searchGo)
+    );
+  });
+
+  function searchList() {
+    return (
+      <Scroll>
+        <SearchList filteredBooks={filteredBooks} />
+      </Scroll>
+    );
+  }
+
+  const handleChange = (e) => {
+    setSearchField(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSearchGo(searchField);
+  };
+
+  return (
+    <section className="search-section">
+      <div>
+        <h2>Search</h2>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <h3> Search for book </h3>
+        <input
+          type="search"
+          placeholder="Search for a book"
+          onChange={handleChange}
+        />
+        <button type="submit"> Submit </button>
+      </form>
+      <br />
+      {searchList()}
+      <br />
+      <div className="footer">
+        <img src={require("./book.png")} alt="Book image" />
+      </div>
+    </section>
+  );
 }
 
 export default Search;

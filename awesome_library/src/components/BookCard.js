@@ -14,9 +14,7 @@ const BookCard = ({ book }) => (
     </div>
     <div className="bookStatus">
       <h3>Copies in Library</h3>
-      {book.copies.map(copy => (
-        <BookCopyCard status={copy.status} />
-      ))}
+      <BookCopyCard copies={book.copies} />
     </div>
   </div>
 );

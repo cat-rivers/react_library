@@ -1,7 +1,9 @@
-const BookCopyCard = ({ status }) => {
+const BookCopyCard = ({ copies }) => {
   return (
     <>
-      <div>{status}</div>
+      {copies.map((copy) =>
+        copy ? <p>{copy.status}</p> : <p> copy info not available</p>
+      )}
     </>
   );
 };
