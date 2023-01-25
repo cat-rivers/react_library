@@ -5,7 +5,7 @@ function SearchList({ filteredBooks }) {
   const filtered = filteredBooks.map((book) => (
     <BookCard key={book.id} book={book} />
   ));
-  return <div>{filtered}</div>;
+  return <div className="search-section">{filtered}</div>;
 }
 
 export default SearchList;

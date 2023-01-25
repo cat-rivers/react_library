@@ -3,7 +3,6 @@ import "./BookCard.css";
 
 const BookCard = ({ book }) => (
   <div className="bookCard">
-    Book
     <div className="bookInfo">
       <div className="header">
         <p>{book.author}</p>
