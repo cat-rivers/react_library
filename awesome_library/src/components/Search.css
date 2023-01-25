@@ -1,2 +1,21 @@
 .search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.search-title {
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+.search-subtitle {
+  text-align: left;
+  position: relative;
+  left: 18%;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }

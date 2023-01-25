@@ -35,10 +35,9 @@ function Search({ bookDetails }) {
   return (
     <section className="search-section">
       <div>
-        <h2>Search</h2>
+        <h1 className="search-title">Search</h1>
       </div>
       <form onSubmit={handleSubmit}>
-        <h3> Search for book </h3>
         <input
           type="search"
           placeholder="Search for a book"
@@ -46,12 +45,19 @@ function Search({ bookDetails }) {
         />
         <button type="submit"> Submit </button>
       </form>
-      <br />
-      {searchList()}
-      <br />
-      <div className="footer">
-        <img src={require("./book.png")} alt="Book image" />
-      </div>
+      {searchGo === "" ? (
+        <div>
+          <div>
+            <h3 className="search-subtitle">All books</h3>
+          </div>
+          {searchList()}
+        </div>
+      ) : (
+        <div>
+          <h3 className="search-subtitle">Search results</h3>
+          {searchList()}
+        </div>
+      )}
     </section>
   );
 }
