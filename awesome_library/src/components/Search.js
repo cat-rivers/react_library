@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Scroll from "./Scroll";
 import SearchList from "./SearchList";
+import "./Search.css";
 
 function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
@@ -26,35 +27,31 @@ function Search({ bookDetails }) {
     setSearchField(e.target.value);
   };
 
-  const handleClick = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSearchGo(searchField);
   };
 
   return (
-    <section>
+    <section className="search-section">
       <div>
         <h2>Search</h2>
       </div>
-      <form
-        onSubmit={() => {
-          console.log("miau");
-        }}
-      >
-        <label> Search: </label>
+      <form onSubmit={handleSubmit}>
+        <h3> Search for book </h3>
         <input
           type="search"
           placeholder="Search for a book"
           onChange={handleChange}
         />
-        <button type="submit" onClick={handleClick}>
-          {" "}
-          Submit{" "}
-        </button>
+        <button type="submit"> Submit </button>
       </form>
       <br />
       {searchList()}
       <br />
+      <div className="footer">
+        <img src={require("./book.png")} alt="Book image" />
+      </div>
     </section>
   );
 }
