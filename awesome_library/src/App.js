@@ -1,13 +1,14 @@
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import Home from "./components/Home"
-import Search from "./components/Search"
-import MyPage from "./components/MyPage"
-import Login from "./components/Login"
-import Signup from "./components/Signup"
-import BookById from "./components/BookById"
-import SignupSuccessful from "./components/SignupSuccessful"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { useState, useEffect } from "react";
+import Home from "./components/Home";
+import Search from "./components/Search";
+import MyPage from "./components/MyPage";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import BookById from "./components/BookById";
+import SignupSuccessful from "./components/SignupSuccessful";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { getAllBooks } from "./services/servicesBooks";
 
 function App() {

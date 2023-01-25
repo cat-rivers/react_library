@@ -49,9 +49,7 @@ function Search({ bookDetails }) {
       <br />
       {searchList()}
       <br />
-      <div className="footer">
-        <img src={require("./book.png")} alt="Book image" />
-      </div>
+
     </section>
   );
 }
