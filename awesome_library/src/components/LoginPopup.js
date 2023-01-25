@@ -18,11 +18,11 @@ const LoginPopup = () => {
 
 
     return (<>
-		<div className="navbarlink" onClick={() => setModalIsOpen(true)}>Signup</div>
+		<div className="navbarlink" onClick={() => setModalIsOpen(true)}>Login</div>
 		<Modal
 			isOpen={modalIsOpen}
 			onRequestClose={closeModal}
-			contentLabel="Signup"
+			contentLabel="Login"
             style={customStyles}
             >
 	    
