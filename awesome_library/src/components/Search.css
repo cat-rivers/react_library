@@ -14,6 +14,7 @@
 .bodyContainer {
     margin-top: 100px;
     max-height: 100px;
+    padding-left: 200px;
 }
 
 .footer {
@@ -22,10 +23,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    max-height:150px;
+    height:100px;
 }
 
 .footer img {
-    max-width: 10%;
-    max-height: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 150px;
 }

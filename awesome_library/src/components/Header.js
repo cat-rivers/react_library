@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import "./Header.css"
 import LoginPopup from "./LoginPopup";
+import SignupPopup from "./SignupPopup";
 
 const Header = () => {
   return (
@@ -17,7 +18,8 @@ const Header = () => {
             <LoginPopup/>
           </li>
           <li className="menuitem">
-            <Link className="menuitem" to="/signup">Sign up</Link>
+            <SignupPopup/>
+           
           </li>
         </ul>
       </nav>
