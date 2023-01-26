@@ -1,23 +1,23 @@
 .footer {
-    display: flex;
-    background-color: rgb(155, 236, 153);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height:60px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  background-color: rgb(155, 236, 153);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer img {
-    position: absolute;
-    bottom: 0;
-    left: 20px;
-    height: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  height: 120px;
 }
 
 h2 {
-    font-style: italic;
-    font-family: 'Lucida Handwriting';
+  font-style: italic;
+  font-family: "Lucida Handwriting";
 }

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Scroll from "./Scroll";
 import SearchList from "./SearchList";
 import "./Search.css";
+import SearchModal from "./SearchModal";
 
 function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
@@ -34,14 +35,13 @@ function Search({ bookDetails }) {
 
   return (
     <section className="search-section">
-
       <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Search for a book"
           onChange={handleChange}
         />
-        <button type="submit"> Submit </button>
+        <button type="submit"> Search </button>
       </form>
       {searchGo === "" ? (
         <div>
