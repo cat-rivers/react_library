@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Scroll from "./Scroll";
 import SearchList from "./SearchList";
 import "./Search.css";
-import SearchModal from "./SearchModal";
 
 function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
   const [searchGo, setSearchGo] = useState("");
 
-  const filteredBooks = bookDetails.filter((book) => {
+  const filteredBooks = bookDetails.filter(book => {
     return (
       book.title.toLowerCase().includes(searchGo.toLowerCase()) ||
       book.author.toLowerCase().includes(searchGo.toLowerCase()) ||
@@ -24,11 +23,11 @@ function Search({ bookDetails }) {
     );
   }
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setSearchField(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     setSearchGo(searchField);
   };
