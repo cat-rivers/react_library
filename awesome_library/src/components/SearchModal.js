@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import { useState } from "react";
-import "./SearchModal.css";
+// import "./SearchModal.css";
 
 const SearchModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
