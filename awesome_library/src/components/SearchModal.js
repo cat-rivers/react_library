@@ -24,7 +24,7 @@ const SearchModal = () => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Individual book page from search results"
-        style={customStyles}
+        // style={customStyles}
       ></Modal>
     </>
   );

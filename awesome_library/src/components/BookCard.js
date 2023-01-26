@@ -36,7 +36,7 @@ const BookCard = ({ book }) => {
       </div>
     );
   };
-  return isModalOn ? bigBookCard() : bookPreviewCard();
+  return !isModalOn ? bigBookCard() : bookPreviewCard();
 };
 
 export default BookCard;
