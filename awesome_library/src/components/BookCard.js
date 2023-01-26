@@ -1,14 +1,26 @@
 import BookCopyCard from "./BookCopyCard";
 import "./BookCard.css";
-import SearchModal from "./SearchModal";
+
 import { useState } from "react";
+import Modal from "react-modal";
 
 const BookCard = ({ book }) => {
-  const [isModalOn, setIsModalOn] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  Modal.setAppElement("#root");
+  const closeModal = () => setModalIsOpen(false);
+
+  // const customStyles = {
+  //   content: {
+  //     inset: "30% auto auto 50%",
+  //     transform: "translate(-50%, -50%)",
+  //     textAlign: "center",
+  //   },
+  // };
+
   const bigBookCard = () => {
     return (
       <div className="bookCard">
-        <button onClick={() => setIsModalOn(false)}>close</button>
+        <button onClick={closeModal}>close</button>
         <div className="bookInfo">
           <div className="header">
             <p>{book.author}</p>
@@ -38,17 +50,28 @@ const BookCard = ({ book }) => {
         <button
           className="modalBookBtn"
           onClick={() => {
-            setIsModalOn(true);
+            setModalIsOpen(true);
           }}
         >
           {" "}
           More..
         </button>
-        <SearchModal />
       </div>
     );
   };
-  return isModalOn ? bigBookCard() : bookPreviewCard();
+  return (
+    <>
+      {bookPreviewCard()}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Individual book page from search results"
+        // style={customStyles}
+      >
+        {bigBookCard()}
+      </Modal>
+    </>
+  );
 };
 
 export default BookCard;
