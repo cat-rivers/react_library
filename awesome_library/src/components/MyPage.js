@@ -1,7 +1,7 @@
 const MyPage = () => {
     return (
-        <h3>Placeholder</h3>
+        <h3>My page Placeholder</h3>
     )
 }
 
-export default MyPage
+export default MyPage;
