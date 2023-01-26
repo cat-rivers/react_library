@@ -2,7 +2,7 @@ import Modal from "react-modal";
 import { useState } from "react";
 import "./LogoffPopup.css";
 
-const LogoffPopup = () => {
+const LogoffPopup = () => { 
     const [modalIsOpen, setModalIsOpen] = useState(false);
 	Modal.setAppElement('#root');
 	const closeModal = () => setModalIsOpen(false)
