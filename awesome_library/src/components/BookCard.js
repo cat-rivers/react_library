@@ -1,5 +1,6 @@
 import BookCopyCard from "./BookCopyCard";
 import "./BookCard.css";
+import SearchModal from "./SearchModal";
 
 const BookCard = ({ book }) => {
   const isModalOn = true;
@@ -34,6 +35,7 @@ const BookCard = ({ book }) => {
           <p>{book.description.substring(0, 200)}...</p>
         </div>
         <button className="modalBookBtn"> More..</button>
+        <SearchModal />
       </div>
     );
   };
