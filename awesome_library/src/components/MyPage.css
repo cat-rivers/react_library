@@ -1,0 +1,40 @@
+body {
+	max-width: 650px;
+	margin: 40px auto;
+	padding: 20px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#colorRect {
+	width: 120px;
+	padding: 20px;
+}
+
+.block {
+	width: 180px;
+	padding: 20px;
+}
+
+#box {
+	background-color: rgb(207, 237, 252) ;
+  } 
+
+.green {
+	background-color: #28ea9c;
+}
+
+.red {
+	background-color: #e13283;
+}
+
+.blue {
+	background-color: #3b98e9;
+}
+
+.yellow {
+	background-color: #f6f686;
+}
+
+.block:hover {
+	background-color: #ffffbc;
+}
