@@ -1,9 +1,14 @@
+import { useContext } from "react"
+import { UserIDContext } from ".././App";
+
 const Login = () => {
+   
+    const testingID = useContext(UserIDContext);
+
     return (
         <>
-        
-        <h3>Placeholder</h3>
-        
+            <br/>Testing if userID context came through. Click the magic button.<br/><br/>
+            User id: {'' + testingID}
         </>
     )
 }

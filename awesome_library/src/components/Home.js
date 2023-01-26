@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
             <div className="bodyContainer">
-                <h2> Library </h2>
+                <h1> Welcome&ensp; to&ensp; The&ensp; Awesome&ensp; Library </h1><br/><br/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                     Nunc accumsan in odio dapibus elementum. Nulla lectus purus, 
                     tincidunt sit amet hendrerit id, dictum eu nunc. In aliquam 

@@ -5,27 +5,23 @@ import SignupPopup from "./SignupPopup";
 
 const Header = () => {
   return (
-    <>
+    <div>
       <nav className="navbar">
-        <ul className="menuitem">
-          <li className="menuitem">
-            <Link className="menuitem" to="/">Home</Link>
-          </li>
-          <li className="menuitem">
-            <Link className="menuitem" to="/search">Search</Link>
-          </li>
-          <li className="menuitem">
-            <LoginPopup/>
-          </li>
-          <li className="menuitem">
-            <SignupPopup/>
-           
-          </li>
+        <ul className="left-side">
+          <li> <Link to="/" style={{ textDecoration: "none", color:"blue" }}>Home</Link> </li>
+          <li> <Link to="/search" style={{ textDecoration: "none", color:"blue" }}>Search</Link> </li>
+        </ul>
+
+        <img src={require("./libraryLogo.png")} alt="Library Logo" />
+
+        <ul className="right-side">
+          <li> <LoginPopup/> </li>
+          <li> <SignupPopup/> </li>
         </ul>
       </nav>
 
       <Outlet />
-    </>
+    </div>
   )
 };
 
