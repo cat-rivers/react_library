@@ -17,15 +17,17 @@ const SearchModal = () => {
 
   return (
     <>
-      <div className="search-modal" onClick={() => setModalIsOpen(true)}>
-        login
-      </div>
+      <button className="modal-button" onClick={() => setModalIsOpen(true)}>
+        See full info
+      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Individual book page from search results"
         style={customStyles}
-      ></Modal>
+      >
+        <h3>Book title here or something</h3>
+      </Modal>
     </>
   );
 };
