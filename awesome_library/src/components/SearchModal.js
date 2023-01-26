@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import { useState } from "react";
-import "./SearchModal.css";
+// import "./SearchModal.css";
 
 const SearchModal = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -17,17 +17,12 @@ const SearchModal = () => {
 
   return (
     <>
-      <button className="modal-button" onClick={() => setModalIsOpen(true)}>
-        More...
-      </button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Individual book page from search results"
         style={customStyles}
-      >
-        <h3>Book title here or something</h3>
-      </Modal>
+      ></Modal>
     </>
   );
 };

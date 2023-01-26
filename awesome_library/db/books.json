@@ -13,7 +13,7 @@
           "id": "1",
           "status": "borrowed",
           "borrower_id": "12345678",
-          "due_date": "two weeks from now :D"
+          "due_date": "2023-07-02T00:00:00.000Z"
         },
         {
           "id": "2",
