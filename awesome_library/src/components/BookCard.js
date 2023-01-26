@@ -1,6 +1,5 @@
 import BookCopyCard from "./BookCopyCard";
 import "./BookCard.css";
-
 import { useState } from "react";
 import Modal from "react-modal";
 
@@ -9,13 +8,13 @@ const BookCard = ({ book }) => {
   Modal.setAppElement("#root");
   const closeModal = () => setModalIsOpen(false);
 
-  // const customStyles = {
-  //   content: {
-  //     inset: "30% auto auto 50%",
-  //     transform: "translate(-50%, -50%)",
-  //     textAlign: "center",
-  //   },
-  // };
+  const customStyles = {
+    content: {
+      inset: "50% auto auto 50%",
+      transform: "translate(-50%, -50%)",
+      textAlign: "center",
+    },
+  };
 
   const bigBookCard = () => {
     return (
@@ -66,7 +65,7 @@ const BookCard = ({ book }) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Individual book page from search results"
-        // style={customStyles}
+        style={customStyles}
       >
         {bigBookCard()}
       </Modal>
