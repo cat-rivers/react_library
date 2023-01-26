@@ -18,7 +18,7 @@ const SearchModal = () => {
   return (
     <>
       <button className="modal-button" onClick={() => setModalIsOpen(true)}>
-        See full info
+        More...
       </button>
       <Modal
         isOpen={modalIsOpen}
