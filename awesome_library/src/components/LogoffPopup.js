@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import { useState } from "react";
-import "./LoginPopup.css";
+import "./LogoffPopup.css";
 
 const LogoffPopup = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -9,7 +9,7 @@ const LogoffPopup = () => {
 
     const customStyles = {
 		content: {
-			inset: '30% auto auto 50%', 
+			inset: '40% auto auto 50%', 
 			transform: 'translate(-50%, -50%)',
 			textAlign: "center",
 		},
@@ -21,17 +21,15 @@ const LogoffPopup = () => {
 		<Modal
 			isOpen={modalIsOpen}
 			onRequestClose={closeModal}
-			contentLabel="Login"
-            style={customStyles}
-            >
-	    
-			<h3>Logoff</h3>
-
+			contentLabel="Logoff"
+            style={customStyles}>
+                <h1>Log Out?</h1>
             <form>
-                YYZ
-            </form>
+            <h3>Are you sure want to log out?</h3>
             <br/>
-			<button onClick={closeModal}>Submit</button>
+            </form>
+			<button onClick={closeModal}>Cancel</button>
+            <button onClick={closeModal}>Log out</button>
 		</Modal>
 	</>)
 }
