@@ -2,6 +2,9 @@ import { Outlet, Link } from "react-router-dom";
 import "./Header.css"
 import LoginPopup from "./LoginPopup";
 import SignupPopup from "./SignupPopup";
+import { useContext } from "react"
+import { UserIDContext } from ".././App";
+import LogoffPopup from "./LogoffPopup";
 
 const Header = () => {
   return (
@@ -15,8 +18,14 @@ const Header = () => {
         <img src={require("./libraryLogo.png")} alt="Library Logo" />
 
         <ul className="right-side">
-          <li> <LoginPopup/> </li>
-          <li> <SignupPopup/> </li>
+        { useContext(UserIDContext)
+            ? <><li> <Link to="/mypage" style={{ textDecoration: "none", color:"blue" }}>My Page</Link> </li> 
+                <li> <LogoffPopup/> </li>
+              </>
+            : <><li> <LoginPopup/> </li> 
+                <li> <SignupPopup/> </li>
+              </>
+        }
         </ul>
       </nav>
 
