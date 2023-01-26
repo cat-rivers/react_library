@@ -2,10 +2,11 @@ import BookCopyCard from "./BookCopyCard";
 import "./BookCard.css";
 
 const BookCard = ({ book }) => {
-  const isModalOn = false;
+  const isModalOn = true;
   const bigBookCard = () => {
     return (
       <div className="bookCard">
+        <button>close</button>
         <div className="bookInfo">
           <div className="header">
             <p>{book.author}</p>
