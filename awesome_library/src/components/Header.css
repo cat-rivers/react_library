@@ -19,7 +19,8 @@
   */
 }
 
-.left-side li, .right-side li {
+.left-side li,
+.right-side li {
   display: inline-block;
   font-weight: bold;
   font-size: larger;
@@ -36,5 +37,5 @@
 
 .navbar img {
   max-width: 50px;
-  max-height: 50px; 
+  max-height: 50px;
 }

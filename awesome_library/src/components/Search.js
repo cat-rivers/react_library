@@ -7,7 +7,7 @@ function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
   const [searchGo, setSearchGo] = useState("");
 
-  const filteredBooks = bookDetails.filter((book) => {
+  const filteredBooks = bookDetails.filter(book => {
     return (
       book.title.toLowerCase().includes(searchGo.toLowerCase()) ||
       book.author.toLowerCase().includes(searchGo.toLowerCase()) ||
@@ -23,25 +23,24 @@ function Search({ bookDetails }) {
     );
   }
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setSearchField(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     setSearchGo(searchField);
   };
 
   return (
     <section className="search-section">
-
       <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Search for a book"
           onChange={handleChange}
         />
-        <button type="submit"> Submit </button>
+        <button type="submit"> Search </button>
       </form>
       {searchGo === "" ? (
         <div>
