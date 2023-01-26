@@ -1,13 +1,14 @@
 import BookCopyCard from "./BookCopyCard";
 import "./BookCard.css";
 import SearchModal from "./SearchModal";
+import { useState } from "react";
 
 const BookCard = ({ book }) => {
-  const isModalOn = true;
+  const [isModalOn, setIsModalOn] = useState(false);
   const bigBookCard = () => {
     return (
       <div className="bookCard">
-        <button>close</button>
+        <button onClick={() => setIsModalOn(false)}>close</button>
         <div className="bookInfo">
           <div className="header">
             <p>{book.author}</p>
@@ -34,12 +35,20 @@ const BookCard = ({ book }) => {
           </div>
           <p>{book.description.substring(0, 200)}...</p>
         </div>
-        <button className="modalBookBtn"> More..</button>
+        <button
+          className="modalBookBtn"
+          onClick={() => {
+            setIsModalOn(true);
+          }}
+        >
+          {" "}
+          More..
+        </button>
         <SearchModal />
       </div>
     );
   };
-  return !isModalOn ? bigBookCard() : bookPreviewCard();
+  return isModalOn ? bigBookCard() : bookPreviewCard();
 };
 
 export default BookCard;
