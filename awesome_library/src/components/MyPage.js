@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const MyPage = (props) => {
-    //const [login, setLogin] = useState("")
-    const [loginApproved, setLoginApproved] = useState(false);
+const MyPage = ({props, userPassword}) => {
+
+    
     
 /*
     const filterBooks = bookDetails.filter((book) => {
