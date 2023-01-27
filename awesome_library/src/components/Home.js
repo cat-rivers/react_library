@@ -16,6 +16,7 @@ const Home = () => {
                     neque justo tincidunt purus, eu egestas massa turpis at arcu.
                 </p>
             </div>
+
         </div>
     )
 }
