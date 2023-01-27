@@ -13,13 +13,12 @@ import { getAllBooks } from "./services/servicesBooks";
 export const UserIDContext = createContext();
 
 function App() {
-  const [ userID, setUserID ] = useState(null); // null = logged off        
+  const [userID, setUserID] = useState(null); // null = logged off
   const [bookDetails, setBookDetails] = useState([]);
 
   useEffect(() => {
     console.log("fetching data!");
-    getAllBooks().then(books => {
-      console.log(books);
+    getAllBooks().then((books) => {
       setBookDetails(books);
     });
   }, []);
@@ -28,14 +27,22 @@ function App() {
     <UserIDContext.Provider value={userID}>
       {/* This button is for login related testing during development.                 */}
       {/* See login.js (http://localhost:3000/login) how userID is read from a child.  */}
-      <button onClick={()=>setUserID(userID?null:12345678)}>{userID?'Rene is logged in':'logged off'}</button>  
+      <button onClick={() => setUserID(userID ? null : 12345678)}>
+        {userID ? "Rene is logged in" : "logged off"}
+      </button>
       <Router>
         <Header />
         <Routes>
           <Route index element={<Home />} />
           <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route path="mypage" element={<MyPage />} />
-          <Route path="signup/signupsuccessful" element={<SignupSuccessful />} />
+          <Route
+            path="mypage"
+            element={<MyPage bookDetails={bookDetails} userID={userID} />}
+          />
+          <Route
+            path="signup/signupsuccessful"
+            element={<SignupSuccessful />}
+          />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="mypage" element={<MyPage />} />

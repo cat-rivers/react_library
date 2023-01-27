@@ -1,7 +1,7 @@
-const MyPage = () => {
-    return (
-        <h3>My page Placeholder</h3>
-    )
-}
+import BorrowedBooks from "./BorrowedBooks";
+
+const MyPage = ({ bookDetails, userID }) => {
+  return <BorrowedBooks bookDetails={bookDetails} userID={userID} />;
+};
 
 export default MyPage;
