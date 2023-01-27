@@ -10,6 +10,8 @@ const BorrowedBooks = ({ bookDetails, userID }) => {
         return <BookCard key={book.id} book={book} />;
     }
     // }
+    //This works like this but why userID instead of "12345678"
+    //and for loop to loop through the copies don't work is beyond me
   });
   return <div className="search-section">{borrowedBook}</div>;
 };
