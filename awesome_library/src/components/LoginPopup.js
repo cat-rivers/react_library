@@ -2,6 +2,7 @@ import Modal from "react-modal";
 import { useState, useContext, useEffect } from "react";
 import "./LoginPopup.css";
 import { UserIDContext } from ".././App";
+import { checkCredentials } from "../services/servicesBooks";
 
 //this is fake- for now
 const fakeUser = {
@@ -13,12 +14,15 @@ const fakeUser = {
 };
 
 const LoginPopup = () => {
-  const [userData, setUserData] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [hasError, setError] = useState(false);
   // const [loginData, setLoginData] = useState({});
 
   Modal.setAppElement("#root");
-  const closeModal = () => setModalIsOpen(false);
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setError(false);
+  };
 
   const customStyles = {
     content: {
@@ -32,7 +36,10 @@ const LoginPopup = () => {
 
   return (
     <>
-      <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
+      <div
+        className="navbarlink"
+        onClick={() => setModalIsOpen(true)}
+      >
         Login
       </div>
       <Modal
@@ -43,27 +50,48 @@ const LoginPopup = () => {
       >
         <h3>Login</h3>
 
-        <form>
-          <label for="lname">Email:</label>
-          <br />
-          <input type="text" id="lname" name="lname" />
-          <br />
-          <label for="lname">Password:</label>
-          <br />
-          <input type="password" id="lname" name="lname" />
-          <br />
-        </form>
-        <br />
-        <button
-          name="submit"
-          onClick={e => {
+        <form
+          onSubmit={(e) => {
             e.preventDefault();
-            fakeUserData.set(fakeUser);
-            closeModal();
+            console.log(
+              e.target.inputId.value,
+              e.target.password.value
+            );
+            checkCredentials(
+              e.target.inputId.value,
+              e.target.password.value
+            ).then((user) => {
+              if (user) {
+                fakeUserData.set(user);
+              } else {
+                setError(true);
+              }
+            });
           }}
         >
-          Submit
-        </button>
+          <button onClick={closeModal}>Close</button>
+          <label for="inputId">Id number:</label>
+          <br />
+          <input
+            defaultValue={12345679}
+            type="text"
+            id="inputId"
+            name="inputId"
+          />
+          <br />
+          <label for="password">Password:</label>
+          <br />
+          <input
+            value={"poop1monster"}
+            type="password"
+            id="password"
+            name="password"
+          />
+          <br />
+          {hasError ? "Login Failed! Try Again!" : ""}
+          <br />
+          <button type="submit">Submit</button>
+        </form>
       </Modal>
     </>
   );
