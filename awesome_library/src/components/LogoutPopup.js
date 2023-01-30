@@ -1,7 +1,7 @@
 import Modal from "react-modal";
 import { useContext, useState } from "react";
 import { UserIDContext } from "../App";
-import "./LogoffPopup.css";
+import "./LogoutPopup.css";
 
 
 
