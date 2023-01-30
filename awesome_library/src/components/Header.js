@@ -4,7 +4,7 @@ import LoginPopup from "./LoginPopup";
 import SignupPopup from "./SignupPopup";
 import { useContext } from "react"
 import { UserIDContext } from ".././App";
-import LogoffPopup from "./LogoffPopup";
+import LogoutPopup from "./LogoutPopup";
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
         <ul className="right-side">
         { useContext(UserIDContext)
             ? <><li> <Link to="/mypage" style={{ textDecoration: "none", color:"blue" }}>My Page</Link> </li> 
-                <li> <LogoffPopup/> </li>
+                <li> <LogoutPopup/> </li>
               </>
             : <><li> <LoginPopup/> </li> 
                 <li> <SignupPopup/> </li>
