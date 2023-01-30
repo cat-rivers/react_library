@@ -1,12 +1,16 @@
 import Modal from "react-modal";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserIDContext } from "../App";
 import "./LogoffPopup.css";
+
+
 
 const LogoffPopup = () => { 
     const [modalIsOpen, setModalIsOpen] = useState(null);
 	Modal.setAppElement('#root');
 	const closeModal = () => setModalIsOpen(false)
 
+	const username = useContext(UserIDContext);
     const customStyles = {
 		content: {
 			inset: '40% auto auto 50%', 
@@ -25,11 +29,13 @@ const LogoffPopup = () => {
             style={customStyles}>
                 <h1>Log Out?</h1>
             <form>
+			<h3>User: {username}</h3>
             <h3>Are you sure want to log out?</h3>
             <br/>
             </form>
 			<button onClick={closeModal}>Cancel</button>
             <button onClick={closeModal}>Log Out</button>
+			
 		</Modal>
 	</>)
 }
