@@ -7,6 +7,7 @@ import { UserIDContext } from ".././App";
 import LogoffPopup from "./LogoffPopup";
 
 const Header = () => {
+  const fakeUserData = useContext(UserIDContext);
   return (
     <div>
       <nav className="navbar">
@@ -31,7 +32,7 @@ const Header = () => {
         <img src={require("./libraryLogo.png")} alt="Library Logo" />
 
         <ul className="right-side">
-          {useContext(UserIDContext) ? (
+          {fakeUserData.data ? (
             <>
               <li>
                 {" "}
