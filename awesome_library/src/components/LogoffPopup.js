@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./LogoffPopup.css";
 
 const LogoffPopup = () => { 
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(null);
 	Modal.setAppElement('#root');
 	const closeModal = () => setModalIsOpen(false)
 
@@ -29,7 +29,7 @@ const LogoffPopup = () => {
             <br/>
             </form>
 			<button onClick={closeModal}>Cancel</button>
-            <button onClick={closeModal}>Log out</button>
+            <button onClick={closeModal}>Log Out</button>
 		</Modal>
 	</>)
 }
