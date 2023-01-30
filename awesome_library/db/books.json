@@ -181,19 +181,14 @@
       "name": "Rene Orosz",
       "password": "hunter12",
       "id": 12345678,
-      "books_currently": [
-        { "isbn": "0679722769" },
-        { "isbn": "9781449337711" }
-      ],
-      "books_history": []
+      "books_currently": [{ "isbn": "0679722769" }, { "isbn": "9781449337711" }]
     },
 
     {
       "name": "Cat Rivers",
       "password": "poop1monster",
       "id": 12345679,
-      "books_currently": [{ "isbn": "9781449325862" }],
-      "books_history": []
+      "books_currently": [{ "isbn": "9781449325862" }]
     }
   ]
 }

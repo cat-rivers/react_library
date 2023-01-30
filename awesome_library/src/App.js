@@ -36,16 +36,12 @@ function App() {
           <Route index element={<Home />} />
           <Route path="search" element={<Search bookDetails={bookDetails} />} />
           <Route
-            path="mypage"
-            element={<MyPage bookDetails={bookDetails} userID={userID} />}
-          />
-          <Route
             path="signup/signupsuccessful"
             element={<SignupSuccessful />}
           />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
-          <Route path="mypage" element={<MyPage />} />
+          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
           <Route path="search/book/{id}" element={<BookById />} />
         </Routes>
         <Footer />
