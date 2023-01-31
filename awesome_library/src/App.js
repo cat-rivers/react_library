@@ -35,7 +35,7 @@ function App() {
             element={<SignupSuccessful />}
           />
           <Route path="signup" element={<Signup />} />
-          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
+          {/* <Route path="mypage" element={<MyPage />} /> */}
           <Route path="search/book/{id}" element={<BookById />} />
         </Routes>
         <Footer />
