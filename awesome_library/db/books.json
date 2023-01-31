@@ -35,7 +35,7 @@
       "website": "http://eloquentjavascript.net/",
       "copies": [
         {
-          "id": "1",
+          "id": "3",
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
@@ -54,7 +54,7 @@
       "website": "http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/",
       "copies": [
         {
-          "id": "1",
+          "id": "4",
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
@@ -73,7 +73,7 @@
       "website": "http://speakingjs.com/",
       "copies": [
         {
-          "id": "1",
+          "id": "5",
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
@@ -92,7 +92,7 @@
       "website": "http://chimera.labs.oreilly.com/books/1234000000262/index.html",
       "copies": [
         {
-          "id": "1",
+          "id": "6",
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
@@ -111,7 +111,7 @@
       "website": "https://leanpub.com/understandinges6/read",
       "copies": [
         {
-          "id": "1",
+          "id": "7",
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
@@ -130,7 +130,7 @@
       "website": "https://github.com/getify/You-Dont-Know-JS/tree/master/es6%20&%20beyond",
       "copies": [
         {
-          "id": "1",
+          "id": "8",
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
@@ -149,7 +149,7 @@
       "website": "http://chimera.labs.oreilly.com/books/1230000000561/index.html",
       "copies": [
         {
-          "id": "1",
+          "id": "9",
           "status": "borrowed",
           "borrower_id": 12345679,
           "due_date": null
@@ -168,7 +168,7 @@
       "website": "http://chimera.labs.oreilly.com/books/1234000001708/index.html",
       "copies": [
         {
-          "id": "1",
+          "id": "10",
           "status": "borrowed",
           "borrower_id": 12345678,
           "due_date": null
@@ -182,8 +182,8 @@
       "password": "hunter12",
       "id": 12345678,
       "books_currently": [
-        { "isbn": "0679722769" },
-        { "isbn": "9781449337711" }
+        { "id": 1},
+        { "id": 10}
       ],
       "books_history": []
     },
@@ -192,7 +192,7 @@
       "name": "Cat Rivers",
       "password": "poop1monster",
       "id": 12345679,
-      "books_currently": [{ "isbn": "9781449325862" }],
+      "books_currently": [{ "id": 9 }],
       "books_history": []
     }
   ]
