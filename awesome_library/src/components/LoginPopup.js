@@ -1,22 +1,14 @@
 import Modal from "react-modal";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import "./LoginPopup.css";
 import { UserIDContext } from ".././App";
 import { checkCredentials } from "../services/servicesBooks";
 
-//this is fake- for now
-const fakeUser = {
-  name: "Cat Rivers",
-  password: "poop1monster",
-  id: 12345679,
-  books_currently: [{ isbn: "9781449325862" }],
-  books_history: [],
-};
-
 const LoginPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [hasError, setError] = useState(false);
-  // const [loginData, setLoginData] = useState({});
+  const navigate = useNavigate();
 
   Modal.setAppElement("#root");
   const closeModal = () => {
@@ -57,6 +49,7 @@ const LoginPopup = () => {
             ).then(user => {
               if (user) {
                 fakeUserData.set(user);
+                navigate("/mypage");
               } else {
                 setError(true);
               }
