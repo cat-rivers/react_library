@@ -4,11 +4,11 @@ import Home from "./components/Home";
 import Search from "./components/Search";
 import MyPage from "./components/MyPage";
 import Signup from "./components/Signup";
-import BookById from "./components/BookById";
 import SignupSuccessful from "./components/SignupSuccessful";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { getAllBooks } from "./services/servicesBooks";
+
 export const UserIDContext = createContext();
 
 function App() {
@@ -36,7 +36,6 @@ function App() {
           />
           <Route path="signup" element={<Signup />} />
           <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
-          <Route path="search/book/{id}" element={<BookById />} />
         </Routes>
         <Footer />
       </Router>

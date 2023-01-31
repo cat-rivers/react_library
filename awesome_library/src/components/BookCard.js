@@ -10,7 +10,7 @@ const BookCard = ({ book }) => {
 
   const customStyles = {
     content: {
-      inset: "50% auto auto 50%",
+      inset: "40% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
     },
@@ -38,34 +38,20 @@ const BookCard = ({ book }) => {
 
   const bookPreviewCard = () => {
     return (
-      <div className="bookCard">
-        <div className="bookInfo">
-          <div className="header">
-            <p>{book.author}</p>
-            <h2>{book.title}</h2>
-          </div>
-          <p>{book.description.substring(0, 200)}...</p>
-        </div>
-        <button
-          className="modalBookBtn"
-          onClick={() => {
-            setModalIsOpen(true);
-          }}
-        >
-          {" "}
-          More..
-        </button>
+      <div className = "searchResults" onClick = {() => {setModalIsOpen(true);}}>
+          {book.author}: {book.title}
       </div>
     );
   };
+
   return (
     <>
       {bookPreviewCard()}
       <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Individual book page from search results"
-        style={customStyles}
+        isOpen = {modalIsOpen}
+        onRequestClose = {closeModal}
+        contentLabel = "Individual book page from search results"
+        style = {customStyles}
       >
         {bigBookCard()}
       </Modal>
