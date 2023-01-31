@@ -3,7 +3,9 @@ const baseUrlBooks = "http://localhost:3001/books";
 const baseUrlUsers = "http://localhost:3001/users";
 
 function getAllBooks() {
-  return axios.get(baseUrlBooks).then(response => response.data);
+  return axios
+    .get(baseUrlBooks)
+    .then((response) => response.data);
 }
 
 console.log(getAllBooks());
@@ -13,7 +15,9 @@ function editBook(changedbook, id) {
 }
 
 function getAllUsers() {
-  return axios.get(baseUrlUsers).then(response => response.data);
+  return axios
+    .get(baseUrlUsers)
+    .then((response) => response.data);
 }
 
 function editUser(changedUser, id) {
@@ -21,11 +25,33 @@ function editUser(changedUser, id) {
 }
 
 function deleteUser(id) {
-  return axios.delete(`${baseUrlUsers}/${id}`).then(response => response.data);
+  return axios
+    .delete(`${baseUrlUsers}/${id}`)
+    .then((response) => response.data);
 }
 
 function createNewUser(newUser) {
-  return axios.post(baseUrlUsers, newUser).then(response => response.data);
+  return axios
+    .post(baseUrlUsers, newUser)
+    .then((response) => response.data);
+}
+
+/**
+ * Function that takes user credentials and returns authenticated user
+ * or false if credentials do not match.
+ *
+ * @param {*} id
+ * @param {*} password
+ */
+function checkCredentials(id, password) {
+  return getAllUsers().then((data) => {
+    console.log(data);
+    return data.filter(
+      (user) =>
+        user.id.toString() === id &&
+        user.password === password
+    )[0];
+  });
 }
 
 export {
@@ -35,6 +61,7 @@ export {
   getAllUsers,
   deleteUser,
   createNewUser,
+  checkCredentials,
 };
 
 // export default getAllBooks;
