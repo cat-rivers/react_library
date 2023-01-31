@@ -17,8 +17,7 @@ function App() {
 
   useEffect(() => {
     console.log("fetching data!");
-    getAllBooks().then(books => {
-      console.log(books);
+    getAllBooks().then((books) => {
       setBookDetails(books);
     });
   }, []);
@@ -31,13 +30,12 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route path="mypage" element={<MyPage />} />
           <Route
             path="signup/signupsuccessful"
             element={<SignupSuccessful />}
           />
           <Route path="signup" element={<Signup />} />
-          {/* <Route path="mypage" element={<MyPage />} /> */}
+          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
           <Route path="search/book/{id}" element={<BookById />} />
         </Routes>
         <Footer />
