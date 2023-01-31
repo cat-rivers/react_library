@@ -1,7 +1,5 @@
 const Signup = () => {
-    return (
-        <h3>Placeholder</h3>
-    )
-}
+  return <h3>Placeholder</h3>;
+};
 
-export default Signup
+export default Signup;
