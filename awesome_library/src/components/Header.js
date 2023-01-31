@@ -4,7 +4,7 @@ import LoginPopup from "./LoginPopup";
 import SignupPopup from "./SignupPopup";
 import { useContext } from "react";
 import { UserIDContext } from ".././App";
-import LogoffPopup from "./LogoffPopup";
+import LogoutPopup from "./LogoutPopup";
 
 const Header = () => {
   const fakeUserData = useContext(UserIDContext);
@@ -13,19 +13,17 @@ const Header = () => {
       <nav className="navbar">
         <ul className="left-side">
           <li>
-            {" "}
             <Link to="/" style={{ textDecoration: "none", color: "blue" }}>
               Home
-            </Link>{" "}
+            </Link>
           </li>
           <li>
-            {" "}
             <Link
               to="/search"
               style={{ textDecoration: "none", color: "blue" }}
             >
               Search
-            </Link>{" "}
+            </Link>
           </li>
         </ul>
 
@@ -35,28 +33,24 @@ const Header = () => {
           {fakeUserData.data ? (
             <>
               <li>
-                {" "}
                 <Link
                   to="/mypage"
                   style={{ textDecoration: "none", color: "blue" }}
                 >
                   My Page
-                </Link>{" "}
+                </Link>
               </li>
               <li>
-                {" "}
-                <LogoffPopup />{" "}
+                <LogoutPopup />
               </li>
             </>
           ) : (
             <>
               <li>
-                {" "}
-                <LoginPopup />{" "}
+                <LoginPopup />
               </li>
               <li>
-                {" "}
-                <SignupPopup />{" "}
+                <SignupPopup />
               </li>
             </>
           )}
