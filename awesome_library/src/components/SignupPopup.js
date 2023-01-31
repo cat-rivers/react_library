@@ -5,12 +5,14 @@ import { useState, useContext, useEffect } from "react";
 import { UserIDContext } from ".././App";
 import { v4 as uuidv4 } from "uuid";
 import { createNewUser } from "../services/servicesBooks";
+import SignupSuccessful from "./SignupSuccessful";
 
 const generateId = () => uuidv4();
 
 const SignupPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const userData = useContext(UserIDContext);
+  const navigate = useNavigate();
 
   Modal.setAppElement("#root");
   const closeModal = () => setModalIsOpen(false);
@@ -42,6 +44,7 @@ const SignupPopup = () => {
   const handleSubmit = e => {
     e.preventDefault();
     setModalIsOpen(false);
+    navigate("/mypage");
 
     return generateNewUser(
       e.target.fname.value,
@@ -65,7 +68,11 @@ const SignupPopup = () => {
         <button onClick={closeModal}>X</button>
         <h3>Signup</h3>
 
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={e => {
+            handleSubmit(e);
+          }}
+        >
           <label for="fname">Name:</label>
           <br />
           <input type="text" id="fname" name="fname" />
