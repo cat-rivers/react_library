@@ -1,14 +1,15 @@
 import Modal from "react-modal";
-import { useState } from "react";
-// import { UserIDContext } from "../App";
+import { useState, useContext } from "react";
+import { UserIDContext } from "../App";
 import "./LogoutPopup.css";
 
 const LogoutPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   Modal.setAppElement("#root");
-  const closeModal = () => setModalIsOpen(false);
 
-  // const username = useContext(UserIDContext);
+  const closeModal = () => {setModalIsOpen(false) ; userData.set(null)};
+  const userData= useContext(UserIDContext);
+
   const customStyles = {
     content: {
       inset: "40% auto auto 50%",
