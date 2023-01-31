@@ -25,7 +25,11 @@ const SignupPopup = () => {
     },
   };
 
-  const generateNewUser = (fullName, password, email) => {
+  const generateNewUser = async (
+    fullName,
+    password,
+    email
+  ) => {
     const newUserInfo = {
       name: fullName,
       password: password,
@@ -34,29 +38,29 @@ const SignupPopup = () => {
       books_currently: [],
       books_history: [],
     };
-    console.log(newUserInfo);
-    createNewUser(newUserInfo).then(newUser => {
-      userData.set(newUserInfo);
-      console.log(userData.userData);
-    });
+    const newUser = await createNewUser(newUserInfo);
+
+    userData.set(newUserInfo);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setModalIsOpen(false);
-    navigate("/mypage");
 
-    return generateNewUser(
+    await generateNewUser(
       e.target.fname.value,
       e.target.password.value,
       e.target.email.value
     );
-    //testing if returns new user
+    navigate("/mypage");
   };
 
   return (
     <>
-      <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
+      <div
+        className="navbarlink"
+        onClick={() => setModalIsOpen(true)}
+      >
         Signup
       </div>
       <Modal
@@ -69,7 +73,7 @@ const SignupPopup = () => {
         <h3>Signup</h3>
 
         <form
-          onSubmit={e => {
+          onSubmit={(e) => {
             handleSubmit(e);
           }}
         >
@@ -83,7 +87,11 @@ const SignupPopup = () => {
           <br />
           <label for="password">Password:</label>
           <br />
-          <input type="password" id="password" name="password" />
+          <input
+            type="password"
+            id="password"
+            name="password"
+          />
           <br />
           <br />
           <button type="submit">Submit</button>
