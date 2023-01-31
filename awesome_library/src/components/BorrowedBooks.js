@@ -1,24 +1,26 @@
 import BorrowedBooksCards from "./BorrowedBooksCards.js";
 import { useContext } from "react";
 import { UserIDContext } from "../App.js";
+import Scroll from "./Scroll.js";
 
 const BorrowedBooks = ({ bookDetails }) => {
   const user = useContext(UserIDContext);
-  const borrowedBooks = user.data.books_currently.map((borrowedBookId) => {
-    console.log(borrowedBookId);
-    bookDetails.map((book) => {
-      book.copies.map((copy) => {
-        console.log(copy.id);
-        if (copy.id === borrowedBookId)
-          return (
-            <BorrowedBooksCards key={book.id} book={book} copy={book.copy} />
-          );
-        else console.log("no ei nyt menny oikein");
-      });
-    });
+  console.log(user.data.books_currently);
+  const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
+    bookDetails.filter((book) =>
+      book.copies.some((copy) => copy.id == borrowedBook.id)
+    )
+  );
+  console.log(borrowedBooks);
+  const borrowedBookList = borrowedBooks.map((book) => {
+    console.log(book);
+    return <BorrowedBooksCards key={book.isbn} book={book} />;
   });
-
-  return <div className="search-section">{borrowedBooks}</div>;
+  return (
+    <Scroll>
+      <div className="search-section">{borrowedBookList}</div>
+    </Scroll>
+  );
 };
 
 export default BorrowedBooks;

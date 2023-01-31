@@ -1,17 +1,30 @@
 import "./BookCard.css";
+import { useContext } from "react";
+import { UserIDContext } from "../App.js";
 
 const BorrowedBooksCards = ({ book, copy }) => {
+  console.log(book[0]);
+  const user = useContext(UserIDContext);
+  const borrowedCopy = book[0].copies.filter(
+    (copy) => copy.borrower_id === user.data.id
+  );
+  const dueDate = borrowedCopy[0].due_date;
+
   return (
     <>
-      <div className="bookInfo">
-        <div className="header">
-          <p>{book.author}</p>
-          <h2>{book.title}</h2>
+      <div className="bookCard">
+        <div className="BookInfo">
+          <p>{book[0].author}</p>
+          <h2>{book[0].title}</h2>
         </div>
-      </div>
-      <div className="bookStatus">
-        <h3>Borrowed by you until: {copy.due_date}</h3>
-        {/* <button onClick={returnBook}>Return book</button> */}
+        <div className="bookStatus">
+          <h3>
+            Borrowed by you until:
+            <br />
+            {dueDate}
+          </h3>
+          <button>Return book</button>
+        </div>
       </div>
     </>
   );
