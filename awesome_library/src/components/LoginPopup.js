@@ -66,12 +66,17 @@ const LoginPopup = () => {
           <button onClick={closeModal}>Close</button>
           <label for="inputId">Id number:</label>
           <br />
-          <input defaultValue={1234} type="text" id="inputId" name="inputId" />
+          <input
+            defaultValue={12345678}
+            type="text"
+            id="inputId"
+            name="inputId"
+          />
           <br />
           <label for="password">Password:</label>
           <br />
           <input
-            defaultValue={"foobar"}
+            defaultValue={"hunter12"}
             type="password"
             id="password"
             name="password"
