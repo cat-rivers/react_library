@@ -30,7 +30,6 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route path="mypage" element={<MyPage />} />
           <Route
             path="signup/signupsuccessful"
             element={<SignupSuccessful />}
