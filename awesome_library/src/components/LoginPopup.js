@@ -1,6 +1,6 @@
 import Modal from "react-modal";
-import { Outlet, Link, useNavigate } from "react-router-dom";
-import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 import "./LoginPopup.css";
 import { UserIDContext } from ".././App";
 import { checkCredentials } from "../services/servicesBooks";
@@ -8,6 +8,7 @@ import { checkCredentials } from "../services/servicesBooks";
 const LoginPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [hasError, setError] = useState(false);
+  const userData = useContext(UserIDContext);
   const navigate = useNavigate();
 
   Modal.setAppElement("#root");
@@ -24,7 +25,19 @@ const LoginPopup = () => {
     },
   };
 
-  const fakeUserData = useContext(UserIDContext);
+  const handleSubmit = e => {
+    e.preventDefault();
+    checkCredentials(e.target.inputId.value, e.target.password.value).then(
+      user => {
+        if (user) {
+          userData.set(user);
+          navigate("/mypage");
+        } else {
+          setError(true);
+        }
+      }
+    );
+  };
 
   return (
     <>
@@ -37,26 +50,11 @@ const LoginPopup = () => {
         contentLabel="Login"
         style={customStyles}
       >
+        <button onClick={closeModal}>X</button>
+
         <h3>Login</h3>
 
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            console.log(e.target.inputId.value, e.target.password.value);
-            checkCredentials(
-              e.target.inputId.value,
-              e.target.password.value
-            ).then(user => {
-              if (user) {
-                fakeUserData.set(user);
-                navigate("/mypage");
-              } else {
-                setError(true);
-              }
-            });
-          }}
-        >
-          <button onClick={closeModal}>Close</button>
+        <form onSubmit={handleSubmit}>
           <label for="inputId">Id number:</label>
           <br />
           <input
