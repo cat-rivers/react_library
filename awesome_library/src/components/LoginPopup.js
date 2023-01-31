@@ -37,7 +37,7 @@ const LoginPopup = () => {
   return (
     <>
       <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
-        Login
+        Log in
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -45,7 +45,7 @@ const LoginPopup = () => {
         contentLabel="Login"
         style={customStyles}
       >
-        <h3>Login</h3>
+        <h3>Log in</h3>
 
         <form
           onSubmit={e => {

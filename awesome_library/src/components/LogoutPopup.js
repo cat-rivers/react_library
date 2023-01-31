@@ -31,7 +31,6 @@ const LogoutPopup = () => {
       >
         <h1>Log Out?</h1>
         <form>
-          <h3>User: </h3>
           <h3>Are you sure want to log Out?</h3>
           <br />
         </form>

@@ -18,7 +18,7 @@ const SignupPopup = () => {
 
 
     return (<>
-		<div className="navbarlink" onClick={() => setModalIsOpen(true)}>Signup</div>
+		<div className="navbarlink" onClick={() => setModalIsOpen(true)}>Sign up</div>
 		<Modal
 			isOpen={modalIsOpen}
 			onRequestClose={closeModal}
@@ -26,7 +26,7 @@ const SignupPopup = () => {
             style={customStyles}
             >
 	    
-			<h3>Signup</h3>
+			<h3>Sign up</h3>
 
             <form>
                 <label for="fname">Name:</label><br/>
