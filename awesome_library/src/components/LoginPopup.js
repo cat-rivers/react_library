@@ -36,10 +36,7 @@ const LoginPopup = () => {
 
   return (
     <>
-      <div
-        className="navbarlink"
-        onClick={() => setModalIsOpen(true)}
-      >
+      <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
         Login
       </div>
       <Modal
@@ -51,16 +48,13 @@ const LoginPopup = () => {
         <h3>Login</h3>
 
         <form
-          onSubmit={(e) => {
+          onSubmit={e => {
             e.preventDefault();
-            console.log(
-              e.target.inputId.value,
-              e.target.password.value
-            );
+            console.log(e.target.inputId.value, e.target.password.value);
             checkCredentials(
               e.target.inputId.value,
               e.target.password.value
-            ).then((user) => {
+            ).then(user => {
               if (user) {
                 fakeUserData.set(user);
               } else {
@@ -72,17 +66,12 @@ const LoginPopup = () => {
           <button onClick={closeModal}>Close</button>
           <label for="inputId">Id number:</label>
           <br />
-          <input
-            defaultValue={12345679}
-            type="text"
-            id="inputId"
-            name="inputId"
-          />
+          <input defaultValue={1234} type="text" id="inputId" name="inputId" />
           <br />
           <label for="password">Password:</label>
           <br />
           <input
-            value={"poop1monster"}
+            defaultValue={"foobar"}
             type="password"
             id="password"
             name="password"
