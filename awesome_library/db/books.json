@@ -12,8 +12,8 @@
         {
           "id": "1",
           "status": "borrowed",
-          "borrower_id": "12345678",
-          "due_date": "2023-07-02T00:00:00.000Z"
+          "borrower_id": 12345678,
+          "due_date": "2023-11-02T00:00:00.000Z"
         },
         {
           "id": "2",
@@ -152,7 +152,7 @@
           "id": "9",
           "status": "borrowed",
           "borrower_id": 12345679,
-          "due_date": null
+          "due_date": "2023-07-02T00:00:00.000Z"
         }
       ]
     },
@@ -171,7 +171,7 @@
           "id": "10",
           "status": "borrowed",
           "borrower_id": 12345678,
-          "due_date": null
+          "due_date": "2023-11-02T00:00:00.000Z"
         }
       ]
     }
@@ -180,6 +180,7 @@
     {
       "name": "Rene Orosz",
       "password": "hunter12",
+      "email": "rene.orosz@mail.com",
       "id": 12345678,
       "books_currently": [{ "id": 1 }, { "id": 10 }],
       "books_history": []
@@ -188,8 +189,33 @@
     {
       "name": "Cat Rivers",
       "password": "poop1monster",
+      "email": "cat.rivers@mail.com",
       "id": 12345679,
       "books_currently": [{ "id": 9 }],
+      "books_history": []
+    },
+    {
+      "name": "Santeri",
+      "password": "foo",
+      "email": "santeri@mail.com",
+      "id": 1235687,
+      "books_currently": [],
+      "books_history": []
+    },
+    {
+      "name": "Bernard",
+      "password": "bar",
+      "email": "bernard@mail.com",
+      "id": 3216,
+      "books_currently": [],
+      "books_history": []
+    },
+    {
+      "name": "Sofia Arauz",
+      "password": "foobar",
+      "email": "sofia.arauz@mail.com",
+      "id": 654321,
+      "books_currently": [],
       "books_history": []
     }
   ]
