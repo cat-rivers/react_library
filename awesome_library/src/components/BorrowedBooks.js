@@ -5,21 +5,29 @@ import Scroll from "./Scroll.js";
 
 const BorrowedBooks = ({ bookDetails }) => {
   const user = useContext(UserIDContext);
-  console.log(user.data.books_currently);
   const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
     bookDetails.filter((book) =>
       book.copies.some((copy) => copy.id == borrowedBook.id)
     )
   );
-  console.log(borrowedBooks);
   const borrowedBookList = borrowedBooks.map((book) => {
-    console.log(book);
     return <BorrowedBooksCards key={book.isbn} book={book} />;
   });
   return (
-    <Scroll>
-      <div className="search-section">{borrowedBookList}</div>
-    </Scroll>
+    <>
+      {user.data.books_currently ? (
+        <div>
+          <div>
+            <br />
+            <p>When you borrow a book it will appear here.</p>
+          </div>
+        </div>
+      ) : (
+        <Scroll>
+          <div className="search-section">{borrowedBookList}</div>
+        </Scroll>
+      )}
+    </>
   );
 };
 

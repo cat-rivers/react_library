@@ -3,7 +3,6 @@ import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 
 const BorrowedBooksCards = ({ book, copy }) => {
-  console.log(book[0]);
   const user = useContext(UserIDContext);
   const borrowedCopy = book[0].copies.filter(
     (copy) => copy.borrower_id === user.data.id
@@ -24,6 +23,7 @@ const BorrowedBooksCards = ({ book, copy }) => {
             {dueDate}
           </h3>
           <button>Return book</button>
+          {/* {This is waiting for the return function} */}
         </div>
       </div>
     </>
