@@ -3,8 +3,8 @@ import { useState, useEffect, createContext } from "react";
 import Home from "./components/Home";
 import Search from "./components/Search";
 import MyPage from "./components/MyPage";
-import Signup from "./components/Signup";
-import SignupSuccessful from "./components/SignupSuccessful";
+//import Signup from "./components/Signup";
+//import SignupSuccessful from "./components/SignupSuccessful";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { getAllBooks } from "./services/servicesBooks";
@@ -30,11 +30,6 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route
-            path="signup/signupsuccessful"
-            element={<SignupSuccessful />}
-          />
-          <Route path="signup" element={<Signup />} />
           <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
         </Routes>
         <Footer />
