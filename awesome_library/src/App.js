@@ -17,29 +17,36 @@ function App() {
 
   useEffect(() => {
     console.log("fetching data!");
-    getAllBooks().then((books) => {
+    getAllBooks().then(books => {
       setBookDetails(books);
     });
   }, []);
 
   return (
-    <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
-      {userData && <button>{userData.name}</button>}
-      <Router>
-        <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route
-            path="signup/signupsuccessful"
-            element={<SignupSuccessful />}
-          />
-          <Route path="signup" element={<Signup />} />
-          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
-        </Routes>
-        <Footer />
-      </Router>
-    </UserIDContext.Provider>
+    <div className="appClass">
+      <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route
+              path="search"
+              element={<Search bookDetails={bookDetails} />}
+            />
+            <Route
+              path="signup/signupsuccessful"
+              element={<SignupSuccessful />}
+            />
+            <Route path="signup" element={<Signup />} />
+            <Route
+              path="mypage"
+              element={<MyPage bookDetails={bookDetails} />}
+            />
+          </Routes>
+          <Footer />
+        </Router>
+      </UserIDContext.Provider>
+    </div>
   );
 }
 
