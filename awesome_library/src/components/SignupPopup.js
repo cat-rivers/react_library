@@ -5,7 +5,6 @@ import { useState, useContext, useEffect } from "react";
 import { UserIDContext } from ".././App";
 import { v4 as uuidv4 } from "uuid";
 import { createNewUser } from "../services/servicesBooks";
-import SignupSuccessful from "./SignupSuccessful";
 
 const generateId = () => uuidv4();
 
@@ -54,7 +53,7 @@ const SignupPopup = () => {
   return (
     <>
       <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
-        Signup
+        Sign up
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -63,7 +62,7 @@ const SignupPopup = () => {
         style={customStyles}
       >
         <button onClick={closeModal}>X</button>
-        <h3>Signup</h3>
+        <h3>Sign up</h3>
 
         <form
           onSubmit={e => {
