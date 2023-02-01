@@ -5,6 +5,7 @@ import Search from "./components/Search";
 import MyPage from "./components/MyPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import NotFound from "./NotFound";
 import { getAllBooks } from "./services/servicesBooks";
 
 export const UserIDContext = createContext();
@@ -29,6 +30,7 @@ function App() {
           <Route index element = {<Home />} />
           <Route path = "search" element = {<Search bookDetails = {bookDetails} />} />
           <Route path = "mypage" element = {<MyPage bookDetails = {bookDetails} />} />
+          <Route path='*' element={<NotFound />}/>
         </Routes>
         <Footer />
       </Router>
