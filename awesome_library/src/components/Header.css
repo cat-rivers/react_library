@@ -1,32 +1,32 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: rgb(147, 228, 222);
+  justify-content: end;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(76, 101, 244);
+  box-shadow: 2px 5px 5px 1px rgba(55, 57, 65, 0.3);
+  box-shadow: inset 2px 0px 10px 10px rgba(55, 57, 65, 0.2);
   position: relative;
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 80px;
 }
 
-.left-side li,
-.right-side li {
-  display: inline-block;
-  font-weight: bold;
-  font-size: larger;
-  color: blue;
+.navbar-links ul {
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.left-side li {
-  margin: 20px 70px 20px 10px;
+.navbar-links li {
+  margin-inline: 1.5em;
+  list-style: none;
+  color: rgb(228, 230, 249);
 }
-
-.right-side li {
-  margin: 20px 10px 20px 50px;
-}
-
-.navbar img {
-  max-width: 50px;
-  max-height: 50px;
+.navbar a {
+  text-decoration: none;
+  color: rgb(228, 230, 249);
 }

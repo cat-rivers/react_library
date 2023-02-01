@@ -15,7 +15,7 @@ const LogoutPopup = () => {
     navigate("/");
   };
 
-   const closeModal = () => {
+  const closeModal = () => {
     setModalIsOpen(false);
   };
 
@@ -45,8 +45,12 @@ const LogoutPopup = () => {
           <h3>Are you sure want to Log Out?</h3>
           <br />
         </form>
-        <button onClick={closeModal} title="Canceling your Log Out">Cancel</button>
-        <button onClick={closeModalLogOut} title="Logging Out">Log Out</button>
+        <button onClick={closeModal} title="Canceling your Log Out">
+          Cancel
+        </button>
+        <button onClick={closeModalLogOut} title="Logging Out">
+          Log Out
+        </button>
       </Modal>
     </>
   );

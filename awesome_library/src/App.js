@@ -16,21 +16,21 @@ function App() {
 
   useEffect(() => {
     console.log("fetching data!");
-    getAllBooks().then((books) => {
+    getAllBooks().then(books => {
       setBookDetails(books);
     });
   }, []);
 
   return (
-    <UserIDContext.Provider value = {{ data: userData, set: setUserData }}>
+    <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
       {userData && <button>{userData.name}</button>}
       <Router>
         <Header />
         <Routes>
-          <Route index element = {<Home />} />
-          <Route path = "search" element = {<Search bookDetails = {bookDetails} />} />
-          <Route path = "mypage" element = {<MyPage bookDetails = {bookDetails} />} />
-          <Route path='*' element={<NotFound />}/>
+          <Route index element={<Home />} />
+          <Route path="search" element={<Search bookDetails={bookDetails} />} />
+          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </Router>
