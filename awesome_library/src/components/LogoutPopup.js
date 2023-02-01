@@ -37,12 +37,11 @@ const LogoutPopup = () => {
       >
         <h1>Log Out?</h1>
         <form>
-          <h3>User: </h3>
           <h3>Are you sure want to log Out?</h3>
           <br />
         </form>
-        <button onClick={closeModal}>Cancel</button>
-        <button onClick={closeModal}>Log Out</button>
+        <button onClick={closeModal} title="Canceling your Log Out">Cancel</button>
+        <button onClick={closeModal} title="Logging Out">Log Out</button>
       </Modal>
     </>
   );

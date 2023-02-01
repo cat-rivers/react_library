@@ -42,7 +42,7 @@ const LoginPopup = () => {
   return (
     <>
       <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
-        Login
+        Log in
       </div>
       <Modal
         isOpen={modalIsOpen}

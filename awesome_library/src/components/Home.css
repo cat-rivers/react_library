@@ -8,3 +8,7 @@ h1 {
     font-family: 'Lucida Handwriting';
     color: rgb(109, 8, 102);
 }
+
+p {
+    text-align: center;
+}
