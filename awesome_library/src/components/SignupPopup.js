@@ -53,7 +53,7 @@ const SignupPopup = () => {
   return (
     <>
       <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
-        Signup
+        Sign up
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -62,7 +62,7 @@ const SignupPopup = () => {
         style={customStyles}
       >
         <button onClick={closeModal}>X</button>
-        <h3>Signup</h3>
+        <h3>Sign up</h3>
 
         <form
           onSubmit={e => {
