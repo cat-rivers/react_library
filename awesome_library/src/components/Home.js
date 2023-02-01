@@ -7,15 +7,13 @@ const Home = () => {
         <div>
             <div className="bodyContainer">
                 <h1> Welcome&ensp; to&ensp; the&ensp; Awesome&ensp; Library </h1><br/><br/>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Nunc accumsan in odio dapibus elementum. </p>
-                    <p>Nulla lectus purus, tincidunt sit amet hendrerit id, dictum eu nunc.</p>
-                    <p>In aliquam volutpat est, sit amet dapibus orci viverra vitae. Integer 
-                    eget dapibus justo. Mauris vehicula elementum libero, quis 
-                    mattis tortor rutrum eu.</p>
-                    <p>Sed interdum, urna nec bibendum euismod, 
-                    neque justo tincidunt purus, eu egestas massa turpis at arcu.
+                <p><b>About us:</b></p>
+                <p>Log in with your library card information and you can e.g. borrow books and get access 
+                    to your own electronic bookshelf.</p>
+                <p>If you cannot log in with the information you entered, please contact your library staff.
                 </p>
+                <p>Yours,<br/>
+                    your Awesome Library team Red</p>
             </div>
 
         </div>

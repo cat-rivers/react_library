@@ -52,10 +52,10 @@ const LoginPopup = () => {
       >
         <button onClick={closeModal}>X</button>
 
-        <h3>Login</h3>
+        <h3>Log in</h3>
 
         <form onSubmit={handleSubmit}>
-          <label for="inputId">Id number:</label>
+          <label for="inputId">ID number:</label>
           <br />
           <input
             defaultValue={12345678}
