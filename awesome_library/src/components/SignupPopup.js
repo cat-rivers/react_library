@@ -5,7 +5,6 @@ import { useState, useContext, useEffect } from "react";
 import { UserIDContext } from ".././App";
 import { v4 as uuidv4 } from "uuid";
 import { createNewUser } from "../services/servicesBooks";
-import SignupSuccessful from "./SignupSuccessful";
 
 const generateId = () => uuidv4();
 
@@ -25,11 +24,7 @@ const SignupPopup = () => {
     },
   };
 
-  const generateNewUser = async (
-    fullName,
-    password,
-    email
-  ) => {
+  const generateNewUser = async (fullName, password, email) => {
     const newUserInfo = {
       name: fullName,
       password: password,
@@ -43,7 +38,7 @@ const SignupPopup = () => {
     userData.set(newUserInfo);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setModalIsOpen(false);
 
@@ -57,10 +52,7 @@ const SignupPopup = () => {
 
   return (
     <>
-      <div
-        className="navbarlink"
-        onClick={() => setModalIsOpen(true)}
-      >
+      <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
         Signup
       </div>
       <Modal
@@ -73,7 +65,7 @@ const SignupPopup = () => {
         <h3>Signup</h3>
 
         <form
-          onSubmit={(e) => {
+          onSubmit={e => {
             handleSubmit(e);
           }}
         >
@@ -87,11 +79,7 @@ const SignupPopup = () => {
           <br />
           <label for="password">Password:</label>
           <br />
-          <input
-            type="password"
-            id="password"
-            name="password"
-          />
+          <input type="password" id="password" name="password" />
           <br />
           <br />
           <button type="submit">Submit</button>

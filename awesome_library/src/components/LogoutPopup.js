@@ -9,11 +9,16 @@ const LogoutPopup = () => {
   const navigate = useNavigate();
   Modal.setAppElement("#root");
 
-  const closeModal = () => {
+  const closeModalLogOut = () => {
     setModalIsOpen(false);
     userData.set(null);
     navigate("/");
   };
+
+   const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   const userData = useContext(UserIDContext);
 
   const customStyles = {
@@ -37,12 +42,11 @@ const LogoutPopup = () => {
       >
         <h1>Log Out?</h1>
         <form>
-          <h3>User: </h3>
           <h3>Are you sure want to log Out?</h3>
           <br />
         </form>
-        <button onClick={closeModal}>Cancel</button>
-        <button onClick={closeModal}>Log Out</button>
+        <button onClick={closeModal} title="Canceling your Log Out">Cancel</button>
+        <button onClick={closeModalLogOut} title="Logging Out">Log Out</button>
       </Modal>
     </>
   );
