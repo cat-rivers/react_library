@@ -23,7 +23,6 @@ function App() {
 
   return (
     <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
-      {userData && <button>{userData.name}</button>}
       <Router>
         <Header />
         <Routes>
