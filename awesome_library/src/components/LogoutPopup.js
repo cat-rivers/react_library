@@ -2,13 +2,19 @@ import Modal from "react-modal";
 import { useState, useContext } from "react";
 import { UserIDContext } from "../App";
 import "./LogoutPopup.css";
+import { useNavigate } from "react-router-dom";
 
 const LogoutPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const navigate = useNavigate();
   Modal.setAppElement("#root");
 
-  const closeModal = () => {setModalIsOpen(false) ; userData.set(null)};
-  const userData= useContext(UserIDContext);
+  const closeModal = () => {
+    setModalIsOpen(false);
+    userData.set(null);
+    navigate("/");
+  };
+  const userData = useContext(UserIDContext);
 
   const customStyles = {
     content: {

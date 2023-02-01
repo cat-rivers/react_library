@@ -1,27 +1,20 @@
 import React, { useState } from "react";
-import Scroll from "./Scroll";
-import SearchList from "./SearchList";
 import "./Search.css";
+import BookCard from "./BookCard";
 
 function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
-  const [searchGo, setSearchGo] = useState("");
+  const [searchString, setSearchString] = useState("");
 
   const filteredBooks = bookDetails.filter(book => {
-    return (
-      book.title.toLowerCase().includes(searchGo.toLowerCase()) ||
-      book.author.toLowerCase().includes(searchGo.toLowerCase()) ||
-      book.isbn.includes(searchGo)
-    );
+    let result = true;
+    searchString.toLowerCase().split(" ").forEach(word =>{
+      if ((book.title + book.author + book.isbn).toLowerCase().includes(word) === false){
+        result = false;
+      } 
+    });
+    return result;
   });
-
-  function searchList() {
-    return (
-      <Scroll>
-        <SearchList filteredBooks={filteredBooks} />
-      </Scroll>
-    );
-  }
 
   const handleChange = e => {
     setSearchField(e.target.value);
@@ -29,32 +22,39 @@ function Search({ bookDetails }) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setSearchGo(searchField);
+    setSearchString(searchField);
   };
+  
+  const SearchList = () => {
+    const filtered = filteredBooks.map((book) => (
+      <BookCard key = {book.id} book = {book} />
+    ));
+    return (
+      <div style = {{ overflowY: "auto", height: "60vh" }}>
+        {filtered}
+      </div>
+    );
+  }
 
   return (
-    <section className="search-section">
-      <form onSubmit={handleSubmit}>
+    <section className = "search-section">
+      <form onSubmit = {handleSubmit}>
         <input
-          type="search"
-          placeholder="Search for a book"
-          onChange={handleChange}
+          type = "search"
+          placeholder = "Search for a book"
+          onChange = {handleChange}
         />
-        <button type="submit"> Search </button>
+        <button type = "submit"> Search </button>
       </form>
-      {searchGo === "" ? (
+      <br/>
+      {searchString !== "" &&
         <div>
-          <div>
-            <h3 className="search-subtitle">All books</h3>
-          </div>
-          {searchList()}
+          {filteredBooks.length > 0
+            ? <>{SearchList()}</>
+            : <div><br/>Book not found</div>
+          }
         </div>
-      ) : (
-        <div>
-          <h3 className="search-subtitle">Search results</h3>
-          {searchList()}
-        </div>
-      )}
+      }  
     </section>
   );
 }

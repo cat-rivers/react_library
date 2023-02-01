@@ -1,22 +1,15 @@
 import Modal from "react-modal";
-import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
 import "./LoginPopup.css";
 import { UserIDContext } from ".././App";
 import { checkCredentials } from "../services/servicesBooks";
 
-//this is fake- for now
-const fakeUser = {
-  name: "Cat Rivers",
-  password: "poop1monster",
-  id: 12345679,
-  books_currently: [{ isbn: "9781449325862" }],
-  books_history: [],
-};
-
 const LoginPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [hasError, setError] = useState(false);
-  // const [loginData, setLoginData] = useState({});
+  const userData = useContext(UserIDContext);
+  const navigate = useNavigate();
 
   Modal.setAppElement("#root");
   const closeModal = () => {
@@ -32,7 +25,19 @@ const LoginPopup = () => {
     },
   };
 
-  const fakeUserData = useContext(UserIDContext);
+  const handleSubmit = e => {
+    e.preventDefault();
+    checkCredentials(e.target.inputId.value, e.target.password.value).then(
+      user => {
+        if (user) {
+          userData.set(user);
+          navigate("/mypage");
+        } else {
+          setError(true);
+        }
+      }
+    );
+  };
 
   return (
     <>
@@ -45,25 +50,11 @@ const LoginPopup = () => {
         contentLabel="Login"
         style={customStyles}
       >
-        <h3>Log in</h3>
+        <button onClick={closeModal}>X</button>
 
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            console.log(e.target.inputId.value, e.target.password.value);
-            checkCredentials(
-              e.target.inputId.value,
-              e.target.password.value
-            ).then(user => {
-              if (user) {
-                fakeUserData.set(user);
-              } else {
-                setError(true);
-              }
-            });
-          }}
-        >
-          <button onClick={closeModal}>Close</button>
+        <h3>Login</h3>
+
+        <form onSubmit={handleSubmit}>
           <label for="inputId">Id number:</label>
           <br />
           <input
