@@ -2,7 +2,7 @@ import "./BookCard.css";
 import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 
-const BorrowedBooksCards = ({ book, copy }) => {
+const BorrowedBooksCards = ({ book }) => {
   const user = useContext(UserIDContext);
   const borrowedCopy = book[0].copies.filter(
     (copy) => copy.borrower_id === user.data.id
@@ -18,9 +18,9 @@ const BorrowedBooksCards = ({ book, copy }) => {
         </div>
         <div className="bookStatus">
           <h3>
-            Borrowed by you until:
+            This book is lent to you until:
             <br />
-            {dueDate}
+            {dueDate.substring(0, 10)}
           </h3>
           <button>Return book</button>
           {/* {This is waiting for the return function} */}

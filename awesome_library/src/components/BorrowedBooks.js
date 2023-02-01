@@ -15,7 +15,7 @@ const BorrowedBooks = ({ bookDetails }) => {
   });
   return (
     <>
-      {user.data.books_currently ? (
+      {user.data.books_currently.length === 0 ? (
         <div>
           <div>
             <br />
