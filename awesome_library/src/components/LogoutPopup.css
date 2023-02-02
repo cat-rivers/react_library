@@ -18,9 +18,11 @@
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 
 .logout-btn {
+  cursor: pointer;
   padding: 5px;
   width: 50%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
