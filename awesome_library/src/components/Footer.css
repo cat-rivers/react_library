@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 15vh;
   align-items: center;
   justify-content: center;
 }
@@ -13,8 +13,9 @@
 .footer img {
   position: absolute;
   bottom: 0;
+  margin-bottom: 5px;
   left: 20px;
-  height: 120px;
+  height: 20vh;
 }
 
 .footer h2 {
