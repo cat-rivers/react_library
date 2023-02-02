@@ -40,18 +40,18 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
 
   console.log(book[0].copies[0].borrower_id);
 
-  const newCopies = book[0].copies.map((copy) => {
-    copy.borrower_id === user.data.id
-      ? (copy = {
-          id: copy.id,
-          status: "in_library",
-          borrower_id: null,
-          due_date: null,
-        })
-      : (copy = copy);
-    return copy;
-  });
-  console.log(newCopies);
+  // const newCopies = book[0].copies.map((copy) => {
+  //   copy.borrower_id === user.data.id
+  //     ? (copy = {
+  //         id: copy.id,
+  //         status: "in_library",
+  //         borrower_id: null,
+  //         due_date: null,
+  //       })
+  //     : (copy = copy);
+  //   return copy;
+  // });
+  // console.log(newCopies);
 
   const updateBookDetails = (user, copyId) => {
     console.log("book is changing");
@@ -83,16 +83,16 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
     });
   };
 
-  console.log(user);
-  const newUser = { ...user.data };
-  console.log(newUser);
-  console.log(newUser.books_currently);
-  const copyIndex = newUser.books_currently.findIndex(
-    (bookToDelete) => bookToDelete.id === copyId
-  );
-  console.log(copyIndex);
-  newUser.books_currently.splice(copyIndex, 1);
-  console.log(newUser);
+  // console.log(user);
+  // const newUser = { ...user.data };
+  // console.log(newUser);
+  // console.log(newUser.books_currently);
+  // const copyIndex = newUser.books_currently.findIndex(
+  //   (bookToDelete) => bookToDelete.id === copyId
+  // );
+  // console.log(copyIndex);
+  // newUser.books_currently.splice(copyIndex, 1);
+  // console.log(newUser);
 
   const changingUserInfo = (user, copyId) => {
     console.log("user is changing");
@@ -135,10 +135,3 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
 };
 
 export default BorrowedBooksCard;
-
-// {
-//   "id": 1
-// },
-// {
-//   "id": 10
-// }
