@@ -21,6 +21,7 @@ const SignupPopup = () => {
       inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      border: "1px solid black",
     },
   };
 
@@ -61,33 +62,35 @@ const SignupPopup = () => {
         contentLabel="Signup"
         style={customStyles}
       >
-        <button className="close-btn" onClick={closeModal}>
-          X
-        </button>
-        <h3>Sign up</h3>
-
-        <form
-          onSubmit={e => {
-            handleSubmit(e);
-          }}
-        >
-          <label for="fname">Name:</label>
-          <br />
-          <input type="text" id="fname" name="fname" />
-          <br />
-          <label for="email">Email:</label>
-          <br />
-          <input type="text" id="email" name="email" />
-          <br />
-          <label for="password">Password:</label>
-          <br />
-          <input type="password" id="password" name="password" />
-          <br />
-          <br />
-          <button className="submit-btn" type="submit">
-            Submit
+        <div className="signup-modal">
+          <button className="close-btn" onClick={closeModal}>
+            X
           </button>
-        </form>
+          <h3>Sign up</h3>
+
+          <form
+            onSubmit={e => {
+              handleSubmit(e);
+            }}
+          >
+            <label for="fname">Name:</label>
+            <br />
+            <input type="text" id="fname" name="fname" />
+            <br />
+            <label for="email">Email:</label>
+            <br />
+            <input type="text" id="email" name="email" />
+            <br />
+            <label for="password">Password:</label>
+            <br />
+            <input type="password" id="password" name="password" />
+            <br />
+            <br />
+            <button className="submit-btn" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </Modal>
     </>
   );

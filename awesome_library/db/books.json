@@ -259,6 +259,14 @@
       "id": "35a72ecd-1b59-40bc-980a-5b3a57bc7f7f",
       "books_currently": [],
       "books_history": []
+    },
+    {
+      "name": "",
+      "password": "",
+      "email": "",
+      "id": "c60e3f92-8f5e-41d7-ba62-00608853e776",
+      "books_currently": [],
+      "books_history": []
     }
   ]
 }

@@ -7,8 +7,17 @@ h1 {
   text-align: center;
   font-family: "Bangers", cursive;
   text-shadow: -6px 4px rgb(254, 191, 2);
+  letter-spacing: 4px;
 }
 
 p {
   text-align: center;
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+  font-family: "Bangers", cursive;
+  text-shadow: -6px 4px rgb(254, 191, 2);
+  letter-spacing: 4px;
 }

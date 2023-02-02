@@ -26,6 +26,7 @@ const LogoutPopup = () => {
       inset: "40% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      border: "1px solid black",
     },
   };
 
