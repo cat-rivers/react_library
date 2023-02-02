@@ -9,7 +9,7 @@ const NotFound = () => {
       </p>
       <br />
       <center>
-        <iframe width="700" height="520" src="../snake/" />
+        <iframe width="620" height="440" src="../snake/" />
       </center>
     </div>
   );
