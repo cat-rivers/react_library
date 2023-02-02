@@ -3,21 +3,15 @@ const baseUrlBooks = "http://localhost:3001/books";
 const baseUrlUsers = "http://localhost:3001/users";
 
 function getAllBooks() {
-  return axios
-    .get(baseUrlBooks)
-    .then((response) => response.data);
+  return axios.get(baseUrlBooks).then((response) => response.data);
 }
-
-console.log(getAllBooks());
 
 function editBook(changedbook, id) {
   return axios.put(`${baseUrlBooks}/${id}`, changedbook);
 }
 
 function getAllUsers() {
-  return axios
-    .get(baseUrlUsers)
-    .then((response) => response.data);
+  return axios.get(baseUrlUsers).then((response) => response.data);
 }
 
 function editUser(changedUser, id) {
@@ -31,9 +25,7 @@ function deleteUser(id) {
 }
 
 function createNewUser(newUser) {
-  return axios
-    .post(baseUrlUsers, newUser)
-    .then((response) => response.data);
+  return axios.post(baseUrlUsers, newUser).then((response) => response.data);
 }
 
 /**
@@ -47,9 +39,7 @@ function checkCredentials(id, password) {
   return getAllUsers().then((data) => {
     console.log(data);
     return data.filter(
-      (user) =>
-        user.id.toString() === id &&
-        user.password === password
+      (user) => user.id.toString() === id && user.password === password
     )[0];
   });
 }

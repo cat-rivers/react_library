@@ -21,14 +21,22 @@ function App() {
   }, []);
 
   return (
-    <UserIDContext.Provider value = {{ data: userData, set: setUserData }}>
+    <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
       {userData && <button>{userData.name}</button>}
       <Router>
         <Header />
         <Routes>
-          <Route index element = {<Home />} />
-          <Route path = "search" element = {<Search bookDetails = {bookDetails} />} />
-          <Route path = "mypage" element = {<MyPage bookDetails = {bookDetails} />} />
+          <Route index element={<Home />} />
+          <Route path="search" element={<Search bookDetails={bookDetails} />} />
+          <Route
+            path="mypage"
+            element={
+              <MyPage
+                bookDetails={bookDetails}
+                setBookDetails={setBookDetails}
+              />
+            }
+          />
         </Routes>
         <Footer />
       </Router>

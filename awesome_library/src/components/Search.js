@@ -6,55 +6,61 @@ function Search({ bookDetails }) {
   const [searchField, setSearchField] = useState("");
   const [searchString, setSearchString] = useState("");
 
-  const filteredBooks = bookDetails.filter(book => {
+  const filteredBooks = bookDetails.filter((book) => {
     let result = true;
-    searchString.toLowerCase().split(" ").forEach(word =>{
-      if ((book.title + book.author + book.isbn).toLowerCase().includes(word) === false){
-        result = false;
-      } 
-    });
+    searchString
+      .toLowerCase()
+      .split(" ")
+      .forEach((word) => {
+        if (
+          (book.title + book.author + book.id).toLowerCase().includes(word) ===
+          false
+        ) {
+          result = false;
+        }
+      });
     return result;
   });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearchField(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSearchString(searchField);
   };
-  
+
   const SearchList = () => {
     const filtered = filteredBooks.map((book) => (
-      <BookCard key = {book.id} book = {book} />
+      <BookCard key={book.id} book={book} />
     ));
-    return (
-      <div style = {{ overflowY: "auto", height: "60vh" }}>
-        {filtered}
-      </div>
-    );
-  }
+    return <div style={{ overflowY: "auto", height: "60vh" }}>{filtered}</div>;
+  };
 
   return (
-    <section className = "search-section">
-      <form onSubmit = {handleSubmit}>
+    <section className="search-section">
+      <form onSubmit={handleSubmit}>
         <input
-          type = "search"
-          placeholder = "Search for a book"
-          onChange = {handleChange}
+          type="search"
+          placeholder="Search for a book"
+          onChange={handleChange}
         />
-        <button type = "submit"> Search </button>
+        <button type="submit"> Search </button>
       </form>
-      <br/>
-      {searchString !== "" &&
+      <br />
+      {searchString !== "" && (
         <div>
-          {filteredBooks.length > 0
-            ? <>{SearchList()}</>
-            : <div><br/>Book not found</div>
-          }
+          {filteredBooks.length > 0 ? (
+            <>{SearchList()}</>
+          ) : (
+            <div>
+              <br />
+              Book not found
+            </div>
+          )}
         </div>
-      }  
+      )}
     </section>
   );
 }

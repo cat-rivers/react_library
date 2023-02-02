@@ -1,9 +1,9 @@
-import BorrowedBooksCards from "./BorrowedBooksCards.js";
+import BorrowedBooksCard from "./BorrowedBooksCard.js";
 import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 import Scroll from "./Scroll.js";
 
-const BorrowedBooks = ({ bookDetails }) => {
+const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
   const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
     bookDetails.filter((book) =>
@@ -11,11 +11,19 @@ const BorrowedBooks = ({ bookDetails }) => {
     )
   );
   const borrowedBookList = borrowedBooks.map((book) => {
-    return <BorrowedBooksCards key={book.isbn} book={book} />;
+    return (
+      <BorrowedBooksCard
+        key={book.id}
+        book={book}
+        bookDetails={bookDetails}
+        setBookDetails={setBookDetails}
+      />
+    );
   });
   return (
     <>
-      {user.data.books_currently.length === 0 ? (
+      {user.data.books_currently.length === 0 ||
+      user.data.books_currently === undefined ? (
         <div>
           <div>
             <br />
