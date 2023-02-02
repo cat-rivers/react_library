@@ -1,5 +1,3 @@
-import "./NotFound.css";
-
 const NotFound = () => {
   return (
     <div>
@@ -11,12 +9,7 @@ const NotFound = () => {
       </p>
       <br />
       <center>
-        <iframe
-          className="snake-screen"
-          width="700"
-          height="520"
-          src="../snake/"
-        />
+        <iframe width="700" height="520" src="../snake/" />
       </center>
     </div>
   );

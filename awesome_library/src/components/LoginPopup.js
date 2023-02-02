@@ -22,7 +22,8 @@ const LoginPopup = () => {
       inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
-      border: "1px solid black",
+      backgroundColor: "rgb(176, 20, 20)",
+      border: "5px solid black",
     },
   };
 
@@ -58,7 +59,7 @@ const LoginPopup = () => {
 
           <h3>Log in</h3>
 
-          <form onSubmit={handleSubmit}>
+          <form className="form-class" onSubmit={handleSubmit}>
             <label for="inputId">ID number:</label>
             <br />
             <input type="text" id="inputId" name="inputId" />
