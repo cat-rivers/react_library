@@ -61,7 +61,9 @@ const SignupPopup = () => {
         contentLabel="Signup"
         style={customStyles}
       >
-        <button onClick={closeModal}>X</button>
+        <button className="close-btn" onClick={closeModal}>
+          X
+        </button>
         <h3>Sign up</h3>
 
         <form
@@ -82,7 +84,9 @@ const SignupPopup = () => {
           <input type="password" id="password" name="password" />
           <br />
           <br />
-          <button type="submit">Submit</button>
+          <button className="submit-btn" type="submit">
+            Submit
+          </button>
         </form>
       </Modal>
     </>

@@ -40,17 +40,22 @@ const LogoutPopup = () => {
         contentLabel="logout"
         style={customStyles}
       >
-        <h1>Log Out?</h1>
-        <form>
-          <h3>Are you sure want to Log Out?</h3>
-          <br />
-        </form>
-        <button onClick={closeModal} title="Canceling your Log Out">
-          Cancel
-        </button>
-        <button onClick={closeModalLogOut} title="Logging Out">
-          Log Out
-        </button>
+        <div className="logout-modal">
+          <button className="close-btn" onClick={closeModal}>
+            X
+          </button>
+          <div className="modal-body">
+            <h3>Are you sure want to Log Out?</h3>
+
+            <button
+              className="logout-btn"
+              onClick={closeModalLogOut}
+              title="Logging Out"
+            >
+              Log Out
+            </button>
+          </div>
+        </div>
       </Modal>
     </>
   );
