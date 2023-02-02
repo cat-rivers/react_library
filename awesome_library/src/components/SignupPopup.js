@@ -21,7 +21,8 @@ const SignupPopup = () => {
       inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
-      border: "1px solid black",
+      backgroundColor: "rgb(176, 20, 20)",
+      border: "5px solid black",
     },
   };
 
@@ -69,6 +70,7 @@ const SignupPopup = () => {
           <h3>Sign up</h3>
 
           <form
+            className="form-class"
             onSubmit={e => {
               handleSubmit(e);
             }}

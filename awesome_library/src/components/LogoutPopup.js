@@ -23,10 +23,11 @@ const LogoutPopup = () => {
 
   const customStyles = {
     content: {
-      inset: "40% auto auto 50%",
+      inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
-      border: "1px solid black",
+      backgroundColor: "rgb(176, 20, 20)",
+      border: "5px solid black",
     },
   };
 

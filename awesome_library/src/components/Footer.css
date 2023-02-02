@@ -23,7 +23,7 @@
     rgba(125, 13, 7, 1) 15%,
     rgba(255, 0, 0, 1) 60%
   );
-  border: 3px solid black;
+  border-top: 4px solid black;
 }
 
 .footer img {

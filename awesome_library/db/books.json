@@ -227,6 +227,14 @@
       "id": 654321,
       "books_currently": [],
       "books_history": []
+    },
+    {
+      "name": "",
+      "password": "",
+      "email": "",
+      "id": "15406fc4-5b8c-4157-ac85-479b387b5505",
+      "books_currently": [],
+      "books_history": []
     }
   ]
 }

@@ -17,24 +17,32 @@
   align-items: center;
   justify-content: center;
   width: 25vw;
-  height: 35vh;
-  padding: 15px;
+  height: 45vh;
+  padding: 5px;
 }
 
-input {
-  padding: 5px;
-  border: 2px solid #daddec;
+.form-class input {
+  padding-bottom: 15px;
+  border: 2px solid #000000;
+  width: 70%;
   margin: 10px 0 10px;
   font-size: 1rem;
-  color: #656880;
+  color: black;
+}
+
+.form-class label {
+  font-size: 1.2em;
+  color: white;
+  letter-spacing: 1px;
 }
 
 .signup-modal h3 {
   font-size: 2em;
-  margin-bottom: 15px;
+  color: rgb(255, 209, 5);
+  margin-bottom: ;
   text-align: center;
   font-family: "Bangers", cursive;
-  text-shadow: -6px 4px rgb(254, 191, 2);
+  text-shadow: -6px 4px rgb(0, 0, 0);
   letter-spacing: 4px;
 }
 
