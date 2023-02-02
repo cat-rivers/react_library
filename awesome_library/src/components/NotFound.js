@@ -1,8 +1,9 @@
+import "./NotFound.css";
+
 const NotFound = () => {
   return (
     <div>
-      <h1>Oops! </h1>
-      <h2>We got ourselves a 404 over here!</h2>
+      <h2>Oops! We got ourselves a 404 over here!</h2>
       <p>
         How about a game of Snake while you're at it..?
         <br />
@@ -10,7 +11,12 @@ const NotFound = () => {
       </p>
       <br />
       <center>
-        <iframe width="580" height="400" src="../snake/" />
+        <iframe
+          className="snake-screen"
+          width="700"
+          height="520"
+          src="../snake/"
+        />
       </center>
     </div>
   );
