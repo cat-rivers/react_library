@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: end;
   margin-top: 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
   background-color: rgb(76, 101, 244);
   box-shadow: 2px 5px 5px 1px rgba(55, 57, 65, 0.3);
@@ -13,6 +13,7 @@
   left: 0;
   right: 0;
   height: 80px;
+  letter-spacing: 2px;
 }
 
 .navbar-links ul {
@@ -22,11 +23,13 @@
 }
 
 .navbar-links li {
-  margin-inline: 1.5em;
+  margin-inline: 1em;
   list-style: none;
-  color: rgb(228, 230, 249);
+  color: rgb(255, 255, 255);
+  font-family: "Bangers", cursive;
+  text-shadow: -3px 3px black;
 }
 .navbar a {
   text-decoration: none;
-  color: rgb(228, 230, 249);
+  color: rgb(255, 255, 255);
 }
