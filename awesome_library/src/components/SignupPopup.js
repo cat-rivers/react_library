@@ -77,15 +77,20 @@ const SignupPopup = () => {
           >
             <label for="fname">Name:</label>
             <br />
-            <input type="text" id="fname" name="fname" />
+            <input type="text" id="fname" name="fname" required="true" />
             <br />
             <label for="email">Email:</label>
             <br />
-            <input type="text" id="email" name="email" />
+            <input type="text" id="email" name="email" required="true" />
             <br />
             <label for="password">Password:</label>
             <br />
-            <input type="password" id="password" name="password" />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required="true"
+            />
             <br />
             <br />
             <button className="submit-btn" type="submit">
