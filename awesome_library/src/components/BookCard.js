@@ -13,18 +13,21 @@ const BookCard = ({ book }) => {
       inset: "40% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
-      border: "1px solid black",
+      backgroundColor: "white",
+      border: "5px solid black",
     },
   };
 
   const bigBookCard = () => {
     return (
       <>
-        <button onClick={closeModal}>close</button>
+        <button className="close-btn" onClick={closeModal}>
+          X
+        </button>
         <div className="bookInfo">
           <div className="header">
             <p>{book.author}</p>
-            <h2>{book.title}</h2>
+            <h3>{book.title}</h3>
             <p>{book.published.substr(0, 4)}</p>
           </div>
           <p>{book.description}</p>
