@@ -1,7 +1,10 @@
 import BorrowedBooksCards from "./BorrowedBooksCards.js";
 import { useContext } from "react";
 import { UserIDContext } from "../App.js";
-import Scroll from "./Scroll.js";
+import { getBook } from "../services/servicesBooks.js";
+
+import {  useEffect } from "react";
+
 
 const BorrowedBooks = () => {
   const user = useContext(UserIDContext);
@@ -14,9 +17,31 @@ const BorrowedBooks = () => {
     )
   );
 
-  console.log("user: "+user.data.name);
-  console.log("b cur: "+user.data.books_currently[0].id);
-  console.log("lainat: "+borrowedBooks);
+/*
+let borrowedBooks = [];
+  
+  user.data.books_currently.forEach(book => {
+    borrowedBooks.push(getBook(book.id));
+  });
+
+  useEffect(() => {
+    user.data.books_currently.forEach(book => {
+      borrowedBooks.push(getBook(book.id));
+    });
+  
+
+  }, []);
+
+
+
+
+console.log("user: "+user.data.name);
+console.log(borrowedBooks);
+console.log('-----------------');
+*/
+
+//console.log("b cur: "+user.data.books_currently[0].id);
+  //console.log("lainat: "+borrowedBooks);
 /*
   const borrowedBookList = borrowedBooks.map((book) => {
     return <BorrowedBooksCards key={book.isbn} book={book} />;
@@ -24,24 +49,29 @@ const BorrowedBooks = () => {
 */
   
   const borrowedBookList = () => {
-    return(<>JEEEE</>);
+    return(
+      <>
+      yks kirja<br/>
+      toinen kirja<br/>
+      kolmas kirja
+    </>
+    );
   }
-
 
   return (
     <>
-      {user.data.books_currently ? (
-        <div>
-          <div>
-            <br />
-            <p>When you borrow a book it will appear here.{borrowedBooks}</p>
-          </div>
+      { user.data.books_currently.length === 0
+      ? <div>
+          <p>You currently don't have any borrowed books.</p>
         </div>
-      ) : (
-        <Scroll>
-          <div className="search-section">{borrowedBooks}</div>
-        </Scroll>
-      )}
+      : 
+        <>
+          <h4>Your books:</h4>
+          <div className="search-section" style = {{ overflowY: "auto", height: "60vh" }}>
+            {borrowedBookList()}
+          </div>
+        </>
+      }
     </>
   );
 };

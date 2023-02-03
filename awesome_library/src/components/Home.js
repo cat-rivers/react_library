@@ -1,7 +1,24 @@
 import React from "react";
 import "./Home.css";
 
+//h testaa
+import { getBook } from "../services/servicesBooks";
+import {  useEffect, useState } from "react";
+
 const Home = () => {
+
+  //h testaa
+  const [b, setB] = useState();
+  useEffect(() => {
+    getBook(1).then(bk => { setB(bk) });
+    console.log(b);
+  },[]);
+
+
+
+  console.log(b);
+    
+
   return (
     <div>
       <h1 className="home-title"> The Amazing Library </h1>

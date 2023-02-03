@@ -9,6 +9,16 @@ const BorrowedBooksCards = ({ book, copy }) => {
   );
   const dueDate = borrowedCopy[0].due_date;
 
+/*
+return(
+  <>
+    yks kirja<br/>
+    toinen kirja<br/>
+    kolmas kirja
+  </>
+);
+*/
+
   return (
     <>
       <div className="bookCard">
@@ -23,7 +33,6 @@ const BorrowedBooksCards = ({ book, copy }) => {
             {dueDate}
           </h3>
           <button>Return book</button>
-          {/* {This is waiting for the return function} */}
         </div>
       </div>
     </>

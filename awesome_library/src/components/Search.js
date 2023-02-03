@@ -39,28 +39,27 @@ function Search() {
     e.preventDefault();
     setSearchString(searchField);
   };
-
+//style = {{ overflowY: "auto", height: "60vh" }}
   const SearchList = () => {
     const filtered = filteredBooks.map(book => (
-      <BookCard key={book.id} book={book} />
+      <BookCard key = {book.id} book = {book} />
     ));
-    return <div style={{ overflowY: "auto", height: "60vh" }}>{filtered}</div>;
+    return <div >{filtered}</div>;
   };
 
   return (
-    <div className="search-section">
-      <form className="form-class" id="search-form" onSubmit={handleSubmit}>
+    <div className = "search-section">
+      <form className = "form-class" id = "search-form" onSubmit = {handleSubmit}>
         <input
-          type="search"
-          placeholder="Search for a book"
+          type = "search"
+          placeholder = "book, author or isbn"
           onChange={handleChange}
         />
-        <button className="search-btn" type="submit">
-          {" "}
-          Search{" "}
+        <button className = "search-btn" type = "submit">
+          {" "}Search{" "}
         </button>
       </form>
-      <div className="results">
+      <div className = "results">
         <br />
         {searchString !== "" && (
           <div>
