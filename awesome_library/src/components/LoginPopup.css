@@ -76,3 +76,12 @@
 .submit-btn:hover {
   background-color: rgb(57, 181, 230);
 }
+
+#login-fail-text {
+  color: white;
+  font-size: larger;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+  font-family: "Bangers", cursive;
+  text-shadow: -3px 2px black;
+}
