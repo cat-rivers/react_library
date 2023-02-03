@@ -17,6 +17,7 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
   console.log(usersDetails);
   console.log(bookDetails);
 
+  console.log(UserIDContext.data);
   const user = useContext(UserIDContext);
   console.log(`User: ${JSON.stringify(user, null, 4)}`);
 
@@ -90,6 +91,13 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
   // console.log("user.data: " + user.data);
   console.log(`User: ${JSON.stringify(user, null, 2)}`);
   console.log(`User.data: ${JSON.stringify(user.data, null, 2)}`);
+  console.log(
+    `User.data.books_currently: ${JSON.stringify(
+      user.data.books_currently,
+      null,
+      2
+    )}`
+  );
   const newUser = { ...user.data };
   console.log(`newUser: ${JSON.stringify(newUser, null, 2)}`);
   console.log("books currently in newUser: " + newUser.books_currently);
