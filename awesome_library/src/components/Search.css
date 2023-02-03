@@ -39,3 +39,10 @@
   margin: 8px 0;
   box-sizing: border-box;
 }
+
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
