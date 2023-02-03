@@ -3,7 +3,9 @@ import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 import "./Home.css";
 
-const MyPage = ({ bookDetails }) => {
+//const MyPage = ({ bookDetails }) => {
+const MyPage = () => {
+
   const user = useContext(UserIDContext);
 
   return (
@@ -15,7 +17,7 @@ const MyPage = ({ bookDetails }) => {
           <h3>Hello {user.data.name}!</h3>
           <h4>Welcome to The Awesome Library.</h4>
           <p>Your books:</p>
-          <BorrowedBooks bookDetails={bookDetails} />
+          <BorrowedBooks />
         </div>
       )}
     </div>

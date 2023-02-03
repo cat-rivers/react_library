@@ -3,8 +3,11 @@ import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 import Scroll from "./Scroll.js";
 
-const BorrowedBooks = ({ bookDetails }) => {
+const BorrowedBooks = () => {
   const user = useContext(UserIDContext);
+
+  const bookDetails = null;
+
   const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
     bookDetails.filter((book) =>
       book.copies.some((copy) => copy.id == borrowedBook.id)
