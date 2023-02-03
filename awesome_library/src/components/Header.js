@@ -51,6 +51,7 @@ const Header = () => {
           </ul>
         </div>
       </nav>
+      <div className="dividing-bar"></div>
 
       <Outlet />
     </div>

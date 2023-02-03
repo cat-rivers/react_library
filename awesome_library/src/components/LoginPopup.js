@@ -22,6 +22,8 @@ const LoginPopup = () => {
       inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      backgroundColor: "rgb(176, 20, 20)",
+      border: "5px solid black",
     },
   };
 
@@ -50,33 +52,29 @@ const LoginPopup = () => {
         contentLabel="Login"
         style={customStyles}
       >
-        <button onClick={closeModal}>X</button>
+        <div className="login-modal">
+          <button className="close-btn" onClick={closeModal}>
+            X
+          </button>
 
-        <h3>Log in</h3>
+          <h3>Log in</h3>
 
-        <form onSubmit={handleSubmit}>
-          <label for="inputId">ID number:</label>
-          <br />
-          <input
-            defaultValue={12345678}
-            type="text"
-            id="inputId"
-            name="inputId"
-          />
-          <br />
-          <label for="password">Password:</label>
-          <br />
-          <input
-            defaultValue={"hunter12"}
-            type="password"
-            id="password"
-            name="password"
-          />
-          <br />
-          {hasError ? "Login Failed! Try Again!" : ""}
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+          <form className="form-class" onSubmit={handleSubmit}>
+            <label for="inputId">ID number:</label>
+            <br />
+            <input type="text" id="inputId" name="inputId" />
+            <br />
+            <label for="password">Password:</label>
+            <br />
+            <input type="password" id="password" name="password" />
+            <br />
+            {hasError ? "Login Failed! Try Again!" : ""}
+            <br />
+            <button className="submit-btn" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </Modal>
     </>
   );

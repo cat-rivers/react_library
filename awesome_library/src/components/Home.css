@@ -1,14 +1,23 @@
-/* .bodyContainer {
-    margin: 50px 100px;   
-} */
-
-body {
-  font-family: "Montserrat", sans-serif;
+.bodyContainer {
+  margin: 50px 100px;
 }
+
 h1 {
+  font-size: 5em;
   text-align: center;
+  font-family: "Bangers", cursive;
+  text-shadow: -6px 4px rgb(254, 191, 2);
+  letter-spacing: 4px;
 }
 
 p {
   text-align: center;
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
+  font-family: "Bangers", cursive;
+  text-shadow: -6px 4px rgb(254, 191, 2);
+  letter-spacing: 4px;
 }

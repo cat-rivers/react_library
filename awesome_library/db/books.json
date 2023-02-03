@@ -229,34 +229,18 @@
       "books_history": []
     },
     {
-      "name": "aa",
-      "password": "aa",
-      "email": "aa",
-      "id": "09486579-26ff-41a1-a5b2-8fa3cf0dab73",
+      "name": "",
+      "password": "",
+      "email": "",
+      "id": "15406fc4-5b8c-4157-ac85-479b387b5505",
       "books_currently": [],
       "books_history": []
     },
     {
-      "name": "kk",
-      "password": "kk",
-      "email": "kk",
-      "id": "93472a88-da18-4d86-8272-795564a5b48d",
-      "books_currently": [],
-      "books_history": []
-    },
-    {
-      "name": "jj",
-      "password": "jj",
-      "email": "jj",
-      "id": "e1ed1770-8d6d-40ca-b946-ad9fc48b04aa",
-      "books_currently": [],
-      "books_history": []
-    },
-    {
-      "name": "asdf",
-      "password": "asdf",
-      "email": "asdf",
-      "id": "35a72ecd-1b59-40bc-980a-5b3a57bc7f7f",
+      "name": "",
+      "password": "",
+      "email": "",
+      "id": "06d312c9-d25b-4653-8ec1-fac4fac0345d",
       "books_currently": [],
       "books_history": []
     }
