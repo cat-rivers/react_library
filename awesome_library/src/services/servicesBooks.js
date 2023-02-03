@@ -65,6 +65,8 @@ function checkCredentials(id, password) {
 }
 
 export {
+  getBook,
+  getUser,
   getAllBooks,
   editBook,
   editUser,
