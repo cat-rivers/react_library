@@ -18,6 +18,7 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
   console.log(bookDetails);
 
   const user = useContext(UserIDContext);
+  console.log(`User: ${JSON.stringify(user, null, 4)}`);
 
   const borrowedCopy = book[0].copies.filter(
     (copy) => copy.borrower_id === user.data.id
@@ -56,18 +57,20 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
   const updateBookDetails = (user, copyId) => {
     console.log("book is changing");
     const newCopies = book[0].copies.map((copy) => {
-      copy.borrower_id === user.data.id
-        ? (copy = {
-            id: copy.id,
-            status: "in_library",
-            borrower_id: null,
-            due_date: null,
-          })
-        : (copy = copy);
+      if (copy.borrower_id === user.data.id) {
+        return {
+          id: copy.id,
+          status: "in_library",
+          borrower_id: null,
+          due_date: null,
+        };
+      } else {
+        return copy;
+      }
     });
     console.log(newCopies);
     const updateBookDetail = {
-      ...book,
+      ...book[0],
       copies: newCopies,
     };
     console.log(updateBookDetail);
@@ -83,16 +86,26 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
     });
   };
 
-  // console.log(user);
-  // const newUser = { ...user.data };
-  // console.log(newUser);
-  // console.log(newUser.books_currently);
-  // const copyIndex = newUser.books_currently.findIndex(
-  //   (bookToDelete) => bookToDelete.id === copyId
-  // );
-  // console.log(copyIndex);
-  // newUser.books_currently.splice(copyIndex, 1);
-  // console.log(newUser);
+  // console.log("user: " + user);
+  // console.log("user.data: " + user.data);
+  console.log(`User: ${JSON.stringify(user, null, 2)}`);
+  console.log(`User.data: ${JSON.stringify(user.data, null, 2)}`);
+  const newUser = { ...user.data };
+  console.log(`newUser: ${JSON.stringify(newUser, null, 2)}`);
+  console.log("books currently in newUser: " + newUser.books_currently);
+  console.log(
+    `books currently in newUser: ${JSON.stringify(
+      newUser.books_currently,
+      null,
+      2
+    )}`
+  );
+  const copyIndex = newUser.books_currently.findIndex(
+    (bookToDelete) => bookToDelete.id === copyId
+  );
+  console.log(`copyIndex: ${JSON.stringify(copyIndex, null, 2)}`);
+  newUser.books_currently.splice(copyIndex, 1);
+  console.log(newUser);
 
   const changingUserInfo = (user, copyId) => {
     console.log("user is changing");
@@ -103,7 +116,6 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
     );
     newUser.books_currently.splice(copyIndex, 1);
     editUser(newUser, user.data.id).then((response) => {
-      console.log(response);
       console.log(user);
       setUsersDetails(
         usersDetails.map((user) =>
