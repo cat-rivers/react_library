@@ -68,7 +68,11 @@ const LoginPopup = () => {
             <br />
             <input type="password" id="password" name="password" />
             <br />
-            {hasError ? "Login Failed! Try Again!" : ""}
+            {hasError ? (
+              <p id="login-fail-text">Login Failed! Try Again!</p>
+            ) : (
+              ""
+            )}
             <br />
             <button className="submit-btn" type="submit">
               Submit

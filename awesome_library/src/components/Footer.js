@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div>
       <div className="footer">
-        <img src={require("./book.png")} alt="Book image" />
+        {/* <img src={require("./book.png")} alt="Book image" /> */}
         {/* <h2> The&ensp; Awesome&ensp; Library&ensp; </h2>  */}
       </div>
     </div>

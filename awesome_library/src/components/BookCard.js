@@ -20,7 +20,7 @@ const BookCard = ({ book }) => {
 
   const bigBookCard = () => {
     return (
-      <>
+      <div className="book-card">
         <button className="close-btn" onClick={closeModal}>
           X
         </button>
@@ -36,7 +36,7 @@ const BookCard = ({ book }) => {
           <h3>Copies in Library</h3>
           <BookCopyCard copies={book.copies} />
         </div>
-      </>
+      </div>
     );
   };
 

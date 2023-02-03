@@ -6,40 +6,23 @@ import MyPage from "./components/MyPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
-//import { getAllBooks } from "./services/servicesBooks";
-
-
+import "./App.css";
 
 function App() {
   const [userData, setUserData] = useState(null); // null = logged off
   
-  /*
-  const [bookDetails, setBookDetails] = useState([]);
-
-  useEffect(() => {
-    console.log("fetching data!");
-    getAllBooks().then(books => {
-      setBookDetails(books);
-    });
-  }, []);
-
-          <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
-
-
-  */
-
-
   return (
     <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
       <Router>
         <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="search" element={<Search />} />
-          <Route path="mypage" element={<MyPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="app-body">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="search" element={<Search />} />
+            <Route path="mypage" element={<MyPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </Router>
     </UserIDContext.Provider>
