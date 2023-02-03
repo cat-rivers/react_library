@@ -5,14 +5,6 @@
   padding: 10px;
 }
 
-.bookCard {
-  width: 60%;
-  border: 1px solid gray;
-  border-radius: 10px;
-  padding: 15px;
-  margin: 10px;
-}
-
 .close-btn {
   margin: 25px;
   width: 30px;
@@ -67,6 +59,8 @@
   background-color: rgb(49, 141, 253);
   border: 3px solid black;
   border-radius: 4px;
+  background-image: url("halftonepattern.png");
+  /* maybe? */
 }
 
 .copy-card p {

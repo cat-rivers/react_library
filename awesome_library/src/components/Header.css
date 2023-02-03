@@ -20,6 +20,7 @@
   text-decoration: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-right: 10px;
 }
 
 .navbar-links li {
