@@ -1,22 +1,56 @@
 import BorrowedBooksCards from "./BorrowedBooksCards.js";
-import { useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import { UserIDContext } from "../App.js";
-import { getBook } from "../services/servicesBooks.js";
-
-import {  useEffect } from "react";
-
+import { getAllBooks } from "../services/servicesBooks.js";
 
 const BorrowedBooks = () => {
   const user = useContext(UserIDContext);
+  const [borrowedBooks, setBorrowedBooks] = useState([]); 
 
-  const bookDetails = [];
+  //h testaa
+/*
+  const [b, setB] = useState();
+  useEffect(() => {
+    user.data.BorrowedBooks.array.forEach(element => {
+      
+    });
+    getBook(1).then(bk => { setB(bk) });
 
+
+    //setTheArray(oldArray => [...oldArray, newElement]);
+    setBorrowedBooks([...borrowedBooks, newElement]);
+
+  },[]);
+  */
+  
+  useEffect(() => {
+
+    getAllBooks().then(books => {
+
+      console.log(books)        
+      })
+      /*
+        setBorrowedBooks(
+          books.filter(b => 
+            (b.copies.borrower_id === user.id))
+        )
+    */
+    
+
+  }, []);
+
+//console.log(borrowedBooks);
+
+
+  // const bookDetails = [];
+
+  /*
   const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
     bookDetails.filter((book) =>
       book.copies.some((copy) => copy.id == borrowedBook.id)
     )
   );
-
+*/
 /*
 let borrowedBooks = [];
   
@@ -58,18 +92,16 @@ console.log('-----------------');
     );
   }
 
+  // we will scroll the page instead
+  //<div className="search-section" style = {{ overflowY: "auto", height: "60vh" }}>
+
   return (
     <>
       { user.data.books_currently.length === 0
-      ? <div>
-          <p>You currently don't have any borrowed books.</p>
-        </div>
-      : 
-        <>
+      ? <p>You currently don't have any borrowed books.</p>
+      : <>
           <h4>Your books:</h4>
-          <div className="search-section" style = {{ overflowY: "auto", height: "60vh" }}>
-            {borrowedBookList()}
-          </div>
+          <div className = "search-section"> {borrowedBookList()} </div>
         </>
       }
     </>
