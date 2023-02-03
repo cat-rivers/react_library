@@ -7,17 +7,16 @@ const MyPage = () => {
   const user = useContext(UserIDContext);
 
   return (
-    <div>
-      {user.data === null ? (
-        <h2 style={{ "text-align": "center" }}>You are not logged in.</h2>
-      ) : (
-        <div><center>
+    <center>
+      {user.data === null 
+      ? <h2>You are not logged in.</h2>
+      : <div>
           <h2>Hello {user.data.name}!</h2>
           <h4>Login ID: {user.data.id}</h4>
           <BorrowedBooks />
-        </center></div>
-      )}
-    </div>
+        </div>
+      }
+    </center>
   );
 };
 

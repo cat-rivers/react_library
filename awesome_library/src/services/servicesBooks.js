@@ -55,7 +55,7 @@ function createNewUser(newUser) {
  */
 function checkCredentials(id, password) {
   return getAllUsers().then((data) => {
-    console.log(data);
+    //console.log(data);
     return data.filter(
       (user) =>
         user.id.toString() === id &&
