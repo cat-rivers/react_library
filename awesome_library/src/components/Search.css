@@ -10,10 +10,10 @@
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .search-btn {
-  color: white;
   font-size: x-large;
   padding: 6px 28px 13px 28px;
   text-decoration: none;
@@ -34,10 +34,16 @@
 }
 
 .form-class input {
-  width: 100%;
+  /* width: 100%; */
   padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+  /* margin: 8px 0; */
+  border: 3px solid black !important;
+  border-radius: 4px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-class input:focus {
+  outline: none;
 }
 
 .results {
