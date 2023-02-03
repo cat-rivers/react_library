@@ -11,6 +11,7 @@
   background-image: url("halftonepattern.png");
   box-shadow: -3px 3px black;
   transition: margin 0.2s ease-in-out;
+  max-width: 100%;
 }
 
 .searchResults:hover {
@@ -73,7 +74,6 @@
   border: 3px solid black;
   border-radius: 4px;
   background-image: url("halftonepattern.png");
-  /* maybe? */
 }
 
 .copy-card p {
