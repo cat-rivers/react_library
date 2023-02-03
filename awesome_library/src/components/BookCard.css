@@ -9,8 +9,15 @@
   border: 3px solid black;
   text-align: center;
   margin-left: 5px;
+  margin-right: 2px;
   background-image: url("halftonepattern.png");
   box-shadow: -3px 3px black;
+  transition: margin 0.2s ease-in-out;
+}
+
+.searchResults:hover {
+  margin-left: 7px;
+  margin-right: 0px;
 }
 
 .close-btn {
