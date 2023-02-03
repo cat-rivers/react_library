@@ -14,10 +14,12 @@ const Home = () => {
           The aim of the libraries is equal opportunities for the population for
           education and culture, as well as possible access to and use of
           information.
-          <br />
+        </p>
+        <p>
           Libraries are important learning actors in the promotion of reading
           culture and versatile reading skills, and enable living.
-          <br />
+        </p>
+        <p>
           Library services and facilities promote active citizenship, democracy
           and freedom of expression.
         </p>
