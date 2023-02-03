@@ -39,7 +39,7 @@ function Search() {
     e.preventDefault();
     setSearchString(searchField);
   };
-//style = {{ overflowY: "auto", height: "60vh" }}
+
   const SearchList = () => {
     const filtered = filteredBooks.map(book => (
       <BookCard key = {book.id} book = {book} />

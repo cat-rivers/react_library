@@ -11,11 +11,7 @@ const Home = () => {
   const [b, setB] = useState();
   useEffect(() => {
     getBook(1).then(bk => { setB(bk) });
-    console.log(b);
   },[]);
-
-
-
   console.log(b);
     
 

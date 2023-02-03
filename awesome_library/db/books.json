@@ -241,7 +241,7 @@
       "name": "Seppo Seponseppo",
       "password": "123",
       "email": "seppo@seponseppo.com",
-      "id": "123",
+      "id": 123,
       "books_currently": [],
       "books_history": []
     }

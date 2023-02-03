@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 import "./Home.css";
 
-const MyPage = () => {
+const MyPage = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
 
   return (
@@ -13,7 +13,7 @@ const MyPage = () => {
       : <div>
           <h2>Hello {user.data.name}!</h2>
           <h4>Login ID: {user.data.id}</h4>
-          <BorrowedBooks />
+          <BorrowedBooks bookDetails={bookDetails} setBookDetails={setBookDetails}/>
         </div>
       }
     </center>
