@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   width: 25vw;
-  height: 35vh;
+  /* height: 35vh;  */
   padding: 5px;
 }
 .login-modal h3 {
@@ -41,6 +41,10 @@
   cursor: pointer;
 }
 
+.close-btn:hover {
+  background-color: rgb(57, 181, 230);
+}
+
 .form-class input {
   padding-bottom: 15px;
   border: 2px solid #000000;
@@ -57,7 +61,7 @@
 }
 
 .submit-btn {
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(0, 0, 0);
   font-family: "Bangers", cursive;
   letter-spacing: 3px;
@@ -67,4 +71,8 @@
   background-color: rgb(67, 202, 255);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: rgb(57, 181, 230);
 }

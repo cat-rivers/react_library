@@ -20,6 +20,7 @@
   text-decoration: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-right: 10px;
 }
 
 .navbar-links li {
@@ -30,9 +31,17 @@
 
   text-shadow: -3px 3px black;
 }
+
+.navbar-links li:hover {
+  color: rgb(243, 251, 11);
+}
+
 .navbar a {
   text-decoration: none;
   color: rgb(255, 255, 255);
+}
+.navbar a:hover {
+  color: rgb(243, 251, 11);
 }
 
 .dividing-bar {

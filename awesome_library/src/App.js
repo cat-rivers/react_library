@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import { getAllBooks } from "./services/servicesBooks";
+import "./App.css";
 
 export const UserIDContext = createContext();
 
@@ -25,12 +26,20 @@ function App() {
     <UserIDContext.Provider value={{ data: userData, set: setUserData }}>
       <Router>
         <Header />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="search" element={<Search bookDetails={bookDetails} />} />
-          <Route path="mypage" element={<MyPage bookDetails={bookDetails} />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="app-body">
+          <Routes>
+            <Route index element={<Home />} />
+            <Route
+              path="search"
+              element={<Search bookDetails={bookDetails} />}
+            />
+            <Route
+              path="mypage"
+              element={<MyPage bookDetails={bookDetails} />}
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
         <Footer />
       </Router>
     </UserIDContext.Provider>
