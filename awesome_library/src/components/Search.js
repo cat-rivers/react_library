@@ -41,7 +41,7 @@ function Search({ bookDetails }) {
 
   return (
     <div className="search-section">
-      <form className="form-class" onSubmit={handleSubmit}>
+      <form className="form-class" id="search-form" onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Search for a book"
