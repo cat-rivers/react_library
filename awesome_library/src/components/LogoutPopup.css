@@ -28,6 +28,10 @@
   cursor: pointer;
 }
 
+.close-btn:hover {
+  background-color: rgb(57, 181, 230);
+}
+
 .logout-modal h3 {
   font-size: 2em;
   color: rgb(255, 209, 5);
@@ -49,4 +53,8 @@
   background-color: rgb(67, 202, 255);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: rgb(57, 181, 230);
 }
