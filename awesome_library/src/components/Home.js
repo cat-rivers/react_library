@@ -1,19 +1,20 @@
 import React from "react";
 import "./Home.css";
 
-//h testaa
+//hh testaa
 import { getBook } from "../services/servicesBooks";
 import {  useEffect, useState } from "react";
+////
 
 const Home = () => {
 
-  //h testaa
+  //hh testaa
   const [b, setB] = useState();
   useEffect(() => {
     getBook(1).then(bk => { setB(bk) });
   },[]);
   console.log(b);
-    
+  ////  
 
   return (
     <div>

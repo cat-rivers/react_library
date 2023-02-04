@@ -14,7 +14,7 @@ const MyPage = ({ bookDetails, setBookDetails }) => {
           <h2>Hello {user.data.name}!</h2>
           <h4>Login ID: {user.data.id}</h4>
           <BorrowedBooks bookDetails={bookDetails} setBookDetails={setBookDetails}/>
-        </div>
+       </div>
       }
     </center>
   );

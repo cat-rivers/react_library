@@ -1,3 +1,4 @@
+/*
 import BorrowedBooksCard from "./BorrowedBooksCard.js";
 import { useEffect, useContext, useState } from "react";
 import { UserIDContext } from "../App.js";
@@ -6,11 +7,12 @@ import { getAllBooks } from "../services/servicesBooks.js";
 
 const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
+  
   const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
-    bookDetails.filter((book) =>
-      book.copies.some((copy) => copy.id == borrowedBook.id)
+    bookDetails.filter((book) => book.copies.some((copy) => copy.id == borrowedBook.id)
     )
   );
+
   const borrowedBookList = borrowedBooks.map((book) => {
     return (
       <BorrowedBooksCard
@@ -21,6 +23,7 @@ const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
       />
     );
   });
+
   return (
     <>
       {user.data.books_currently.length === 0 ||
@@ -41,10 +44,17 @@ const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
 };
 
 export default BorrowedBooks;
+*/
 
-/*
-const BorrowedBooks = () => {
+import BorrowedBooksCard from "./BorrowedBooksCard.js";
+import { useEffect, useContext, useState } from "react";
+import { UserIDContext } from "../App.js";
+import { getAllBooks } from "../services/servicesBooks.js";
+
+
+const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
+ /*
   const [bookDetails, setBookDetails] = useState([]);
 
   useEffect(() => {
@@ -52,14 +62,14 @@ const BorrowedBooks = () => {
       setBookDetails(books);
     });
   }, []);
-  
+  */
   const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
     bookDetails.filter((book) =>
       book.copies.some((copy) => 
-      copy.id === borrowedBook.id)
+      copy.id == borrowedBook.id)
     )
   );
-console.log(borrowedBooks);
+//console.log(borrowedBooks);
 
   const borrowedBookList = borrowedBooks.map((book) => {
     return <BorrowedBooksCard key = {book.isbn} book = {book} />;
@@ -79,4 +89,3 @@ console.log(borrowedBooks);
 };
 
 export default BorrowedBooks;
-*/
