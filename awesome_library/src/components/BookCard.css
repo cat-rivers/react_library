@@ -8,7 +8,7 @@
   text-align: center;
   margin-left: 5px;
   margin-right: 2px;
-  background-image: url("halftonepattern.png");
+  background-image: url("../images/halftonepattern.png");
   box-shadow: -3px 3px black;
   transition: margin 0.2s ease-in-out;
 }
@@ -72,7 +72,7 @@
   background-color: rgb(49, 141, 253);
   border: 3px solid black;
   border-radius: 4px;
-  background-image: url("halftonepattern.png");
+  background-image: url("../images/halftonepattern.png");
   /* maybe? */
 }
 
@@ -85,7 +85,7 @@
   background-color: rgb(49, 141, 253);
   border: 3px solid black;
   border-radius: 4px;
-  background-image: url("halftonepattern.png");
+  background-image: url("../images/halftonepattern.png");
   margin: 3px;
   padding: 3px;
 }
