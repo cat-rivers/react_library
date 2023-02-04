@@ -1,5 +1,9 @@
 import "./BookCard.css";
 
+const borrowBook = (copy) => {
+  console.log("!!! lainataan !!! ",copy);
+}
+
 const BookCopyCard = ({ copies }) => {
   const statusBorrowed = copy => {
     return (
@@ -15,11 +19,12 @@ const BookCopyCard = ({ copies }) => {
     return (
       <div className="copy-card">
         <p>
-          {copy.status} <button className="borrow-btn"> Borrow </button>
+          {copy.status} <button className="borrow-btn" onClick={() => borrowBook(copy)}> Borrow </button>
         </p>
       </div>
     );
   };
+
   return (
     <>
       {copies.map(copy =>
