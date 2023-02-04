@@ -1,27 +1,32 @@
 import "./BookCard.css";
+import { useContext } from "react";
+import { UserIDContext } from "../App.js";
 
 const borrowBook = (copy) => {
   console.log("!!! lainataan !!! ",copy);
 }
 
 const BookCopyCard = ({ copies }) => {
+  const user = useContext(UserIDContext);
+
   const statusBorrowed = copy => {
     return (
       <div>
         <p>
-          {copy.status} - return date {copy.due_date.substring(0, 10)}
+          Unavailable - Return date {copy.due_date.substring(0, 10)}
         </p>
       </div>
     );
   };
 
   const statusInLibrary = copy => {
+    
     return (
-      <div className="copy-card">
-        <p>
-          {copy.status} <button className="borrow-btn" onClick={() => borrowBook(copy)}> Borrow </button>
-        </p>
-      </div>
+      <>
+        {user.data === null 
+            ? <>Available - Log in to borrow.</>
+            : <div className="copy-card"><p>Available - <button className="borrow-btn" onClick={() => borrowBook(copy)}> Borrow </button></p></div>}
+      </>
     );
   };
 

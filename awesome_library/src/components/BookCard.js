@@ -33,7 +33,7 @@ const BookCard = ({ book }) => {
           <p>{book.description}</p>
         </div>
         <div className="bookStatus">
-          <h3>Copies in Library</h3>
+          <h4>Copies:</h4>
           <BookCopyCard copies={book.copies} />
         </div>
       </div>
