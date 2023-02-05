@@ -74,15 +74,15 @@ const SignupPopup = () => {
               handleSubmit(e);
             }}
           >
-            <label for="fname">Name:</label>
+            <label htmlFor="fname">Name:</label>
             <br />
-            <input type="text" id="fname" name="fname" required="true" />
+            <input type="text" id="fname" name="fname" required={true} />
             <br />
-            <label for="email">Email:</label>
+            <label htmlFor="email">Email:</label>
             <br />
-            <input type="email" id="email" name="email" required="true" />
+            <input type="email" id="email" name="email" required={true} />
             <br />
-            <label for="password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <br />
             <input
               type="password"
