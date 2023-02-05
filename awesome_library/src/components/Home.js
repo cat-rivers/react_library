@@ -2,9 +2,9 @@ import React from "react";
 import "./Home.css";
 
 const Home = () => {
-   return (
+  return (
     <div>
-      <h1 className="home-titledd"> The Amazing Library </h1>
+      <h1 className="home-titledd"> The Awesome Library </h1>
       <div className="bodyContainer">
         <div className="book-image">
           <img src={require("../images/book-svg.png")}></img>
