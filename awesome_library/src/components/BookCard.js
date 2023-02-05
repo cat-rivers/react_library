@@ -15,6 +15,7 @@ const BookCard = ({ book }) => {
       textAlign: "center",
       backgroundColor: "white",
       border: "5px solid black",
+      overflow: "auto",
     },
   };
 
