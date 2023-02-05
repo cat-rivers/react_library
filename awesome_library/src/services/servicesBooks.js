@@ -2,13 +2,23 @@ import axios from "axios";
 const baseUrlBooks = "http://localhost:3001/books";
 const baseUrlUsers = "http://localhost:3001/users";
 
+function getBook(id){
+  return axios
+    .get(`${baseUrlBooks}/${id}`)
+    .then((response) => response.data);
+}
+
+function getUser(id){
+  return axios
+    .get(`${baseUrlUsers}/${id}`)
+    .then((response) => response.data);
+}
+
 function getAllBooks() {
   return axios
     .get(baseUrlBooks)
     .then((response) => response.data);
 }
-
-console.log(getAllBooks());
 
 function editBook(changedbook, id) {
   return axios.put(`${baseUrlBooks}/${id}`, changedbook);
@@ -45,7 +55,7 @@ function createNewUser(newUser) {
  */
 function checkCredentials(id, password) {
   return getAllUsers().then((data) => {
-    console.log(data);
+    //console.log(data);
     return data.filter(
       (user) =>
         user.id.toString() === id &&
@@ -55,6 +65,8 @@ function checkCredentials(id, password) {
 }
 
 export {
+  getBook,
+  getUser,
   getAllBooks,
   editBook,
   editUser,
@@ -63,5 +75,3 @@ export {
   createNewUser,
   checkCredentials,
 };
-
-// export default getAllBooks;

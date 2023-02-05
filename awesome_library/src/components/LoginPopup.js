@@ -60,11 +60,11 @@ const LoginPopup = () => {
           <h3>Log in</h3>
 
           <form className="form-class" onSubmit={handleSubmit}>
-            <label for="inputId">ID number:</label>
+            <label htmlFor="inputId">ID number:</label>
             <br />
             <input type="text" id="inputId" name="inputId" />
             <br />
-            <label for="password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <br />
             <input type="password" id="password" name="password" />
             <br />
