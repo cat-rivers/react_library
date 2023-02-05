@@ -2,7 +2,6 @@ import BorrowedBooksCard from "./BorrowedBooksCard.js";
 import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 
-
 const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
 
@@ -14,7 +13,7 @@ const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   );
 
   const borrowedBookList = borrowedBooks.map((book) => {
-    return <BorrowedBooksCard key = {book.isbn} book = {book} />;
+    return <BorrowedBooksCard key = {book.id} book = {book} />;
   });
 
   return (

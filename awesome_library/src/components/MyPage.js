@@ -6,7 +6,7 @@ import "./Home.css";
 const MyPage = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
 
-  return (
+   return (
     <center>
       {user.data === null 
       ? <h2>You are not logged in.</h2>

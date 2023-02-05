@@ -18,9 +18,9 @@
         },
         {
           "id": "2",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
+          "status": "borrowed",
+          "borrower_id": 123,
+          "due_date": "2023-03-07T00:26:36.786Z"
         }
       ]
     },
@@ -78,9 +78,9 @@
       "copies": [
         {
           "id": "5",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
+          "status": "borrowed",
+          "borrower_id": 123,
+          "due_date": "2023-03-07T00:26:34.204Z"
         }
       ]
     },
@@ -181,6 +181,66 @@
           "status": "borrowed",
           "borrower_id": 12345678,
           "due_date": "2023-11-02T00:00:00.000Z"
+        },
+        {
+          "id": "11",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "12",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "13",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "14",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "15",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "16",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "17",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "18",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "19",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
+        },
+        {
+          "id": "20",
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
         }
       ]
     }
@@ -200,7 +260,9 @@
         }
       ],
       "books_history": [
-
+        {
+          "id": 3
+        }
       ]
     },
     {
@@ -242,18 +304,33 @@
     {
       "name": "Seppo Seponseppo",
       "password": "123",
-      "email": "seppo@seponseppo.com",
+      "email": "seppo@sepot.com",
       "id": 123,
-      "books_currently": [],
-      "books_history": []
+      "books_currently": [
+        {
+          "id": "5"
+        },
+        {
+          "id": "2"
+        }
+      ],
+      "books_history": [
+        {
+          "id": 1
+        }
+      ]
     },
     {
-      "name": "uusi",
-      "password": "asdf",
-      "email": "asdf",
-      "id": "9cc5c27e-c61f-4a1d-9bc6-0a6b03f09c45",
+      "name": "james potkukelekka",
+      "password": "zzz",
+      "email": "james@mail.com",
+      "id": "515ea192-c327-428c-886f-2216d781e358",
       "books_currently": [],
-      "books_history": []
+      "books_history": [
+        {
+          "id": 6
+        }
+      ]
     }
   ]
 }

@@ -10,7 +10,6 @@ const BorrowedBooksCard = ({ book }) => {
   const copyId = borrowedCopy[0].id;
 
   const removeBookCard = () => {
-    // update the book
     let bookTemp = book[0];
     bookTemp.copies = bookTemp.copies.map(bookCopy => 
       bookCopy["id"].toString() !== copyId.toString() 
@@ -18,7 +17,6 @@ const BorrowedBooksCard = ({ book }) => {
         : {...bookCopy, "status": "in_library", "borrower_id": null, "due_date": null});
     editBook(bookTemp, book[0].id);   
 
-    // update the user
     let userTemp = user.data;
     userTemp.books_currently = userTemp.books_currently.filter((b) => b["id"].toString() !== copyId.toString());   
     userTemp.books_history.push({id:book[0].id});  // Book history has the book id, not a book copy id!
@@ -27,7 +25,7 @@ const BorrowedBooksCard = ({ book }) => {
   };
 
   return (
-    <div className="borrowedBook">
+    <div key={book[0].id} className="borrowedBook">
         <h3>{book[0].title}</h3>
         <p>{book[0].author}<br/>
           Due date: {dueDate.substring(0, 10)}

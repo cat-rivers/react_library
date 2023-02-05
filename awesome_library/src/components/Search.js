@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Search.css";
 import BookCard from "./BookCard";
-import { getAllBooks } from "../services/servicesBooks";
 
-function Search() {
+function Search({ bookDetails, setBookDetails }) {
   const [searchField, setSearchField] = useState("");
   const [searchString, setSearchString] = useState("");
-  const [bookDetails, setBookDetails] = useState([]);
-
-  useEffect(() => {
-    getAllBooks().then(books => {
-      setBookDetails(books);
-    });
-  }, []);
 
   const filteredBooks = bookDetails.filter(book => {
     let result = true;
