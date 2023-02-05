@@ -3,10 +3,9 @@ import "./SignupPopup.css";
 import { useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import { UserIDContext } from ".././App";
-import { v4 as uuidv4 } from "uuid";
 import { createNewUser } from "../services/servicesBooks";
-
-const generateId = () => uuidv4();
+const ShortUniqueId = require("short-unique-id");
+const uid = new ShortUniqueId({ dictionary: "number", length: 5 });
 
 const SignupPopup = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -31,13 +30,13 @@ const SignupPopup = () => {
       name: fullName,
       password: password,
       email: email,
-      id: generateId(),
+      id: uid(),
       books_currently: [],
       books_history: [],
     };
     const newUser = await createNewUser(newUserInfo);
 
-    userData.set(newUserInfo);
+    userData.set(newUser);
   };
 
   const handleSubmit = async e => {
@@ -81,7 +80,7 @@ const SignupPopup = () => {
             <br />
             <label for="email">Email:</label>
             <br />
-            <input type="text" id="email" name="email" required="true" />
+            <input type="email" id="email" name="email" required="true" />
             <br />
             <label for="password">Password:</label>
             <br />
