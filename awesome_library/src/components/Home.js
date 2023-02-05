@@ -2,12 +2,12 @@ import React from "react";
 import "./Home.css";
 
 const Home = () => {
-  return (
+   return (
     <div>
-      <h1 className="home-title"> The Amazing Library </h1>
+      <h1 className="home-titledd"> The Amazing Library </h1>
       <div className="bodyContainer">
         <div className="book-image">
-          <img src={require("./book-svg.png")}></img>
+          <img src={require("../images/book-svg.png")}></img>
         </div>
         <div className="text">
           <h3>About us:</h3>
