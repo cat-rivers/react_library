@@ -313,6 +313,21 @@
           "id": 7
         }
       ]
+    },
+    {
+      "name": "cata",
+      "password": "foobar",
+      "email": "cata@mail.com",
+      "id": "87286",
+      "books_currently": [],
+      "books_history": [
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        }
+      ]
     }
   ]
 }
