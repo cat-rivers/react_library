@@ -7,8 +7,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 15vw;
-  height: 25vh;
+  max-width: 30vw;
+  /* width: 15vw;
+  height: 25vh; */
   padding: 5px;
   margin-bottom: 25px;
 }
@@ -36,7 +37,7 @@
 .logout-modal h3 {
   font-size: 2em;
   color: rgb(255, 209, 5);
-  margin-bottom: ;
+  margin-top: 50px;
   text-align: center;
   font-family: "Bangers", cursive;
   text-shadow: -6px 4px rgb(0, 0, 0);

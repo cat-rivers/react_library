@@ -12,9 +12,9 @@
       "copies": [
         {
           "id": "1",
-          "status": "borrowed",
-          "borrower_id": 12345678,
-          "due_date": "2023-11-02T00:00:00.000Z"
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
         },
         {
           "id": "2",
@@ -178,9 +178,9 @@
       "copies": [
         {
           "id": "10",
-          "status": "borrowed",
-          "borrower_id": 12345678,
-          "due_date": "2023-11-02T00:00:00.000Z"
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
         },
         {
           "id": "11",
@@ -221,17 +221,19 @@
       "password": "hunter12",
       "email": "rene.orosz@mail.com",
       "id": 12345678,
-      "books_currently": [
-        {
-          "id": 10
-        },
-        {
-          "id": 1
-        }
-      ],
+      "books_currently": [],
       "books_history": [
         {
           "id": 3
+        },
+        {
+          "id": 9
+        },
+        {
+          "id": 1
+        },
+        {
+          "id": 1
         }
       ]
     },
