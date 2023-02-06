@@ -10,12 +10,12 @@ const BookCard = ({ book }) => {
 
   const customStyles = {
     content: {
-      inset: "40% auto auto 50%",
+      inset: "50% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
       backgroundColor: "white",
       border: "5px solid black",
-      overflow: "auto",
+      overflow: "scroll",
     },
   };
 

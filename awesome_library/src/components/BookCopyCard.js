@@ -6,13 +6,13 @@ import { editBook, editUser } from "../services/servicesBooks";
 const BookCopyCard = ({ book }) => {
   const user = useContext(UserIDContext);
 
-  const borrowBook = copy => {
+  const borrowBook = (copy) => {
     let bookTemp = book;
     let dueDate = new Date(
       new Date().setDate(new Date().getDate() + 30)
     ).toJSON();
 
-    bookTemp.copies = book.copies.map(bookCopy =>
+    bookTemp.copies = book.copies.map((bookCopy) =>
       bookCopy["id"].toString() !== copy.id.toString()
         ? bookCopy
         : {
@@ -30,7 +30,7 @@ const BookCopyCard = ({ book }) => {
     editUser(userTemp, userTemp.id);
   };
 
-  const statusBorrowed = copy => {
+  const statusBorrowed = (copy) => {
     return (
       <div key={copy.id} className="unavailable-copy">
         <p>Unavailable - Return date {copy.due_date.substring(0, 10)}</p>
@@ -38,11 +38,11 @@ const BookCopyCard = ({ book }) => {
     );
   };
 
-  const statusInLibrary = copy => {
+  const statusInLibrary = (copy) => {
     return (
       <div key={copy.id}>
         {user.data === null ? (
-          <div className=" not-logged-book">Available - Log in to borrow.</div>
+          <div className=" not-logged-book">Available - Log in to borrow</div>
         ) : (
           <div className="copy-card">
             <p>
@@ -60,7 +60,7 @@ const BookCopyCard = ({ book }) => {
 
   return (
     <>
-      {book.copies.map(copy =>
+      {book.copies.map((copy) =>
         copy.status === "in_library"
           ? statusInLibrary(copy)
           : statusBorrowed(copy)
