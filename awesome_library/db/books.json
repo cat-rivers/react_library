@@ -330,6 +330,14 @@
           "id": 3
         }
       ]
+    },
+    {
+      "name": "gabi",
+      "password": "foobar",
+      "email": "gabi@mail.com",
+      "id": "08961",
+      "books_currently": [],
+      "books_history": []
     }
   ]
 }
