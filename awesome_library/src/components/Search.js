@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import BookCard from "./BookCard";
 
-function Search({ bookDetails }) {
+function Search({ bookDetails, setBookDetails }) {
   const [searchField, setSearchField] = useState("");
   const [searchString, setSearchString] = useState("");
 
@@ -13,8 +13,9 @@ function Search({ bookDetails }) {
       .split(" ")
       .forEach((word) => {
         if (
-          (book.title + book.author + book.id).toLowerCase().includes(word) ===
-          false
+          (book.title + book.author + book.isbn)
+            .toLowerCase()
+            .includes(word) === false
         ) {
           result = false;
         }
@@ -35,33 +36,38 @@ function Search({ bookDetails }) {
     const filtered = filteredBooks.map((book) => (
       <BookCard key={book.id} book={book} />
     ));
-    return <div style={{ overflowY: "auto", height: "60vh" }}>{filtered}</div>;
+    return <div>{filtered}</div>;
   };
 
   return (
-    <section className="search-section">
-      <form onSubmit={handleSubmit}>
+    <div className="search-section">
+      <form className="form-class" id="search-form" onSubmit={handleSubmit}>
         <input
           type="search"
-          placeholder="Search for a book"
+          placeholder="book, author or isbn"
           onChange={handleChange}
         />
-        <button type="submit"> Search </button>
+        <button className="search-btn" type="submit">
+          {" "}
+          Search{" "}
+        </button>
       </form>
-      <br />
-      {searchString !== "" && (
-        <div>
-          {filteredBooks.length > 0 ? (
-            <>{SearchList()}</>
-          ) : (
-            <div>
-              <br />
-              Book not found
-            </div>
-          )}
-        </div>
-      )}
-    </section>
+      <div className="results">
+        <br />
+        {searchString !== "" && (
+          <div>
+            {filteredBooks.length > 0 ? (
+              <SearchList />
+            ) : (
+              <div>
+                <br />
+                Book not found
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 

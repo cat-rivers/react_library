@@ -17,17 +17,8 @@
   align-items: center;
   justify-content: center;
   width: 25vw;
-  height: 45vh;
-  padding: 5px;
-}
 
-.form-class input {
-  padding-bottom: 15px;
-  border: 2px solid #000000;
-  width: 70%;
-  margin: 10px 0 10px;
-  font-size: 1rem;
-  color: black;
+  padding: 5px;
 }
 
 .form-class label {

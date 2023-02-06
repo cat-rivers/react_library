@@ -52,6 +52,10 @@ window.addEventListener('load', function(){
      * Pass arrow keys to snake. Handle game restart with space & enter. 
      */
     function keyPress(e) {
+        // prevent default for arrow keys before checking gameover
+        if(Object.values(DIRECTION).includes(e.keyCode) && e.keyCode !== DIRECTION.STOP) 
+            e.preventDefault();
+            
         if(gameover){
             if(e.keyCode === 32 || e.keyCode === 13)  // restart with space or enter
             {
