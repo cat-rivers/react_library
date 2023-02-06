@@ -6,12 +6,12 @@ function Search({ bookDetails, setBookDetails }) {
   const [searchField, setSearchField] = useState("");
   const [searchString, setSearchString] = useState("");
 
-  const filteredBooks = bookDetails.filter(book => {
+  const filteredBooks = bookDetails.filter((book) => {
     let result = true;
     searchString
       .toLowerCase()
       .split(" ")
-      .forEach(word => {
+      .forEach((word) => {
         if (
           (book.title + book.author + book.isbn)
             .toLowerCase()
@@ -23,11 +23,11 @@ function Search({ bookDetails, setBookDetails }) {
     return result;
   });
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setSearchField(e.target.value);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setSearchString(searchField);
   };

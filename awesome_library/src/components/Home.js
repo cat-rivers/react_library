@@ -10,27 +10,23 @@ const Home = () => {
           <img src={require("../images/book-svg.png")}></img>
         </div>
         <div className="text">
-          <h3>About us:</h3>
+          <h3>About us</h3>
           <p>
-            The aim of the libraries is equal opportunities for the population
-            for education and culture, as well as possible access to and use of
-            information. Libraries are important learning actors in the
-            promotion of reading culture and versatile reading skills, and
-            enable living. Library services and facilities promote active
-            citizenship, democracy and freedom of expression.
+            Libraries provide an equal opportunity for everyone to access
+            information and education. Libraries play an important role in
+            advocating reading culture and versatile reading skills, as well as
+            improving the level of knowledge among the population. As a small,
+            independent neighborhood library, we, too, try our best to promote
+            active citizenship, democracy, and freedom of expression.
           </p>
           <p>
-            Log in with your library card information and you can e.g. borrow
-            books and get access to your own electronic bookshelf. If you cannot
-            log in with the information you entered, please contact your library
-            staff.
+            Begin by creating an account or logging in with your ID number to
+            borrow books and get access to your electronic bookshelf.
           </p>
-          <p>***</p>
-          <p>
-            Yours,
-            <br />
-            your Awesome Library team Red
-          </p>
+          <p>Explore and enjoy!</p>
+          <br />
+          <p>Warm regards,</p>
+          <p>The Awesome Library staff</p>
         </div>
       </div>
     </div>

@@ -11,7 +11,7 @@ const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
     )
   );
 
-  const borrowedBookList = borrowedBooks.map(book => {
+  const borrowedBookList = borrowedBooks.map((book) => {
     return <BorrowedBooksCard key={book.id} book={book} />;
   });
 

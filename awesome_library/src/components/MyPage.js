@@ -14,7 +14,7 @@ const MyPage = ({ bookDetails, setBookDetails }) => {
         <div>
           <h2>Hello {user.data.name}!</h2>
           <h4>Login ID: {user.data.id}</h4>
-          <p>
+          <p id="keep-id-safe-message">
             Keep your ID number in a safe place. You will need this to login.
           </p>
           <BorrowedBooks
