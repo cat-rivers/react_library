@@ -5,9 +5,9 @@ import { UserIDContext } from "../App.js";
 const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
 
-  const borrowedBooks = user.data.books_currently.map((borrowedBook) =>
-    bookDetails.filter((book) =>
-      book.copies.some((copy) => copy.id == borrowedBook.id)
+  const borrowedBooks = user.data.books_currently.map(borrowedBook =>
+    bookDetails.filter(book => 
+      book.copies.some(copy => copy.id.toString() === borrowedBook.id.toString())
     )
   );
 
