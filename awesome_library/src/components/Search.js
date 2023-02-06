@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Search.css";
-import BookCard from "./BookCard";
+import SearchBookCard from "./SearchBookCard";
 
 function Search({ bookDetails, setBookDetails }) {
   const [searchField, setSearchField] = useState("");
@@ -34,7 +34,7 @@ function Search({ bookDetails, setBookDetails }) {
 
   const SearchList = () => {
     const filtered = filteredBooks.map(book => (
-      <BookCard key={book.id} book={book} />
+      <SearchBookCard key={book.id} book={book} />
     ));
     return <div>{filtered}</div>;
   };

@@ -1,9 +1,9 @@
-import BookCopyCard from "./BookCopyCard";
+import SearchBookCopyCard from "./SearchBookCopyCard";
 import "./BookCard.css";
 import { useState } from "react";
 import Modal from "react-modal";
 
-const BookCard = ({ book }) => {
+const SearchBookCard = ({ book }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   Modal.setAppElement("#root");
   const closeModal = () => setModalIsOpen(false);
@@ -35,7 +35,7 @@ const BookCard = ({ book }) => {
         </div>
         <div className="bookStatus">
           <h4>Copies:</h4>
-          <BookCopyCard book={book} />
+          <SearchBookCopyCard book={book} />
         </div>
       </div>
     );
@@ -69,4 +69,4 @@ const BookCard = ({ book }) => {
   );
 };
 
-export default BookCard;
+export default SearchBookCard;

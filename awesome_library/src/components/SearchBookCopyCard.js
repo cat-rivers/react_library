@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 import { editBook, editUser } from "../services/servicesBooks";
 
-const BookCopyCard = ({ book }) => {
+const SearchBookCopyCard = ({ book }) => {
   const user = useContext(UserIDContext);
 
   const borrowBook = copy => {
@@ -69,4 +69,4 @@ const BookCopyCard = ({ book }) => {
   );
 };
 
-export default BookCopyCard;
+export default SearchBookCopyCard;
