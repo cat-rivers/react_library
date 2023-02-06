@@ -7,6 +7,7 @@ const SearchBookCard = ({ book }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   Modal.setAppElement("#root");
   const closeModal = () => setModalIsOpen(false);
+  const available = book.copies.find(copy => copy.status === "in_library") !== undefined;
 
   const customStyles = {
     content: {
@@ -40,16 +41,18 @@ const SearchBookCard = ({ book }) => {
       </div>
     );
   };
-
+  
   const bookPreviewCard = () => {
     return (
       <div
-        className="searchResults"
         onClick={() => {
           setModalIsOpen(true);
         }}
-      >
-        {book.author}: {book.title}
+      > 
+      {available === true
+        ? (<div className="searchResults">{book.author}: {book.title}</div>)
+        : (<div className="searchResultsUnavailable">{book.author}: {book.title}</div>)
+      }
       </div>
     );
   };
