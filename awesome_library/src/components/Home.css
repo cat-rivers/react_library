@@ -9,7 +9,9 @@
 }
 
 .book-image img {
-  width: 80%;
+  width: 70%;
+  border: 6px solid black;
+  border-radius: 50%;
 }
 
 h1 {
@@ -33,4 +35,9 @@ h2 {
   font-family: "Bangers", cursive;
   text-shadow: -6px 4px rgb(254, 191, 2);
   letter-spacing: 4px;
+}
+
+#keep-id-safe-message {
+  font-weight: bold;
+  font-size: 20px;
 }

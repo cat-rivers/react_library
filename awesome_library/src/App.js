@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Search from "./components/Search";
 import MyPage from "./components/MyPage";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 import "./App.css";
 
@@ -14,7 +14,7 @@ function App() {
   const [bookDetails, setBookDetails] = useState([]);
 
   useEffect(() => {
-    getAllBooks().then((books) => {
+    getAllBooks().then(books => {
       setBookDetails(books);
     });
   }, []);
@@ -47,7 +47,7 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </UserIDContext.Provider>
   );
