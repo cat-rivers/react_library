@@ -312,6 +312,29 @@
           "id": 7
         }
       ]
+    },
+    {
+      "name": "cata",
+      "password": "foobar",
+      "email": "cata@mail.com",
+      "id": "87286",
+      "books_currently": [],
+      "books_history": [
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        }
+      ]
+    },
+    {
+      "name": "gabi",
+      "password": "foobar",
+      "email": "gabi@mail.com",
+      "id": "08961",
+      "books_currently": [],
+      "books_history": []
     }
   ]
 }
