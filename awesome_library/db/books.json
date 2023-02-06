@@ -12,15 +12,15 @@
       "copies": [
         {
           "id": "1",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
+          "status": "borrowed",
+          "borrower_id": 123,
+          "due_date": "2023-03-08T12:04:56.263Z"
         },
         {
           "id": "2",
-          "status": "borrowed",
-          "borrower_id": 123,
-          "due_date": "2023-03-07T00:26:36.786Z"
+          "status": "in_library",
+          "borrower_id": null,
+          "due_date": null
         }
       ]
     },
@@ -277,13 +277,16 @@
       "id": 123,
       "books_currently": [
         {
-          "id": "5"
-        },
-        {
-          "id": "2"
+          "id": "1"
         }
       ],
       "books_history": [
+        {
+          "id": 1
+        },
+        {
+          "id": 4
+        },
         {
           "id": 1
         }
