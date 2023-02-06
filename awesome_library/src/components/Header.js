@@ -7,55 +7,51 @@ import { UserIDContext } from ".././App";
 import LogoutPopup from "./LogoutPopup";
 
 const Header = () => {
-  const fakeUserData = useContext(UserIDContext);
+  const userData = useContext(UserIDContext);
   return (
     <div>
       <nav className="navbar">
-        <ul className="left-side">
-          <li>
-            <Link to="/" style={{ textDecoration: "none", color: "blue" }}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/search"
-              style={{ textDecoration: "none", color: "blue" }}
-            >
-              Search
-            </Link>
-          </li>
-        </ul>
-
-        <img src={require("./libraryLogo.png")} alt="Library Logo" />
-
-        <ul className="right-side">
-          {fakeUserData.data ? (
-            <>
-              <li>
-                <Link
-                  to="/mypage"
-                  style={{ textDecoration: "none", color: "blue" }}
-                >
-                  My Page
-                </Link>
-              </li>
-              <li>
-                <LogoutPopup />
-              </li>
-            </>
-          ) : (
-            <>
-              <li>
-                <LoginPopup />
-              </li>
-              <li>
-                <SignupPopup />
-              </li>
-            </>
-          )}
-        </ul>
+        <div className="navbar-links">
+          <ul className="links" id="links">
+            {userData.data ? (
+              <>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/search">Search</Link>
+                </li>
+                <li>
+                  <Link to="/mypage">My Page</Link>
+                </li>
+                <li>
+                  <LogoutPopup />
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to="/" style={{ textDecoration: "none" }}>
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/search" style={{ textDecoration: "none" }}>
+                    Search
+                  </Link>
+                </li>
+                <li>
+                  <LoginPopup />
+                </li>
+                <li>
+                  <SignupPopup />
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
       </nav>
+      <div className="dividing-bar"></div>
 
       <Outlet />
     </div>

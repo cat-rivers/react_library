@@ -15,7 +15,7 @@ const LogoutPopup = () => {
     navigate("/");
   };
 
-   const closeModal = () => {
+  const closeModal = () => {
     setModalIsOpen(false);
   };
 
@@ -23,9 +23,11 @@ const LogoutPopup = () => {
 
   const customStyles = {
     content: {
-      inset: "40% auto auto 50%",
+      inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      backgroundColor: "rgb(176, 20, 20)",
+      border: "5px solid black",
     },
   };
 
@@ -40,13 +42,22 @@ const LogoutPopup = () => {
         contentLabel="logout"
         style={customStyles}
       >
-        <h1>Log Out?</h1>
-        <form>
-          <h3>Are you sure want to log Out?</h3>
-          <br />
-        </form>
-        <button onClick={closeModal} title="Canceling your Log Out">Cancel</button>
-        <button onClick={closeModalLogOut} title="Logging Out">Log Out</button>
+        <div className="logout-modal">
+          <button className="close-btn" onClick={closeModal}>
+            X
+          </button>
+          <div className="modal-body">
+            <h3>Are you sure want to Log Out?</h3>
+
+            <button
+              className="logout-btn"
+              onClick={closeModalLogOut}
+              title="Logging Out"
+            >
+              Log Out
+            </button>
+          </div>
+        </div>
       </Modal>
     </>
   );

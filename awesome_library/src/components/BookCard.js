@@ -13,17 +13,21 @@ const BookCard = ({ book }) => {
       inset: "40% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      backgroundColor: "white",
+      border: "5px solid black",
     },
   };
 
   const bigBookCard = () => {
     return (
       <>
-        <button onClick={closeModal}>close</button>
+        <button className="close-btn" onClick={closeModal}>
+          X
+        </button>
         <div className="bookInfo">
           <div className="header">
             <p>{book.author}</p>
-            <h2>{book.title}</h2>
+            <h3>{book.title}</h3>
             <p>{book.published.substr(0, 4)}</p>
           </div>
           <p>{book.description}</p>
@@ -38,8 +42,13 @@ const BookCard = ({ book }) => {
 
   const bookPreviewCard = () => {
     return (
-      <div className = "searchResults" onClick = {() => {setModalIsOpen(true);}}>
-          {book.author}: {book.title}
+      <div
+        className="searchResults"
+        onClick={() => {
+          setModalIsOpen(true);
+        }}
+      >
+        {book.author}: {book.title}
       </div>
     );
   };
@@ -48,10 +57,10 @@ const BookCard = ({ book }) => {
     <>
       {bookPreviewCard()}
       <Modal
-        isOpen = {modalIsOpen}
-        onRequestClose = {closeModal}
-        contentLabel = "Individual book page from search results"
-        style = {customStyles}
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Individual book page from search results"
+        style={customStyles}
       >
         {bigBookCard()}
       </Modal>

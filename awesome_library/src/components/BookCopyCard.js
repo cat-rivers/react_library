@@ -1,3 +1,5 @@
+import "./BookCard.css";
+
 const BookCopyCard = ({ copies }) => {
   const statusBorrowed = copy => {
     return (
@@ -11,9 +13,9 @@ const BookCopyCard = ({ copies }) => {
 
   const statusInLibrary = copy => {
     return (
-      <div>
+      <div className="copy-card">
         <p>
-          {copy.status} <button> Borrow </button>
+          {copy.status} <button className="borrow-btn"> Borrow </button>
         </p>
       </div>
     );

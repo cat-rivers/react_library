@@ -21,6 +21,8 @@ const SignupPopup = () => {
       inset: "30% auto auto 50%",
       transform: "translate(-50%, -50%)",
       textAlign: "center",
+      backgroundColor: "rgb(176, 20, 20)",
+      border: "5px solid black",
     },
   };
 
@@ -53,7 +55,7 @@ const SignupPopup = () => {
   return (
     <>
       <div className="navbarlink" onClick={() => setModalIsOpen(true)}>
-        Signup
+        Sign up
       </div>
       <Modal
         isOpen={modalIsOpen}
@@ -61,29 +63,41 @@ const SignupPopup = () => {
         contentLabel="Signup"
         style={customStyles}
       >
-        <button onClick={closeModal}>X</button>
-        <h3>Signup</h3>
+        <div className="signup-modal">
+          <button className="close-btn" onClick={closeModal}>
+            X
+          </button>
+          <h3>Sign up</h3>
 
-        <form
-          onSubmit={e => {
-            handleSubmit(e);
-          }}
-        >
-          <label for="fname">Name:</label>
-          <br />
-          <input type="text" id="fname" name="fname" />
-          <br />
-          <label for="email">Email:</label>
-          <br />
-          <input type="text" id="email" name="email" />
-          <br />
-          <label for="password">Password:</label>
-          <br />
-          <input type="password" id="password" name="password" />
-          <br />
-          <br />
-          <button type="submit">Submit</button>
-        </form>
+          <form
+            className="form-class"
+            onSubmit={e => {
+              handleSubmit(e);
+            }}
+          >
+            <label for="fname">Name:</label>
+            <br />
+            <input type="text" id="fname" name="fname" required="true" />
+            <br />
+            <label for="email">Email:</label>
+            <br />
+            <input type="text" id="email" name="email" required="true" />
+            <br />
+            <label for="password">Password:</label>
+            <br />
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required="true"
+            />
+            <br />
+            <br />
+            <button className="submit-btn" type="submit">
+              Submit
+            </button>
+          </form>
+        </div>
       </Modal>
     </>
   );
