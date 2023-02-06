@@ -87,8 +87,8 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
     });
   };
 
-  // console.log("user: " + user);
-  // console.log("user.data: " + user.data);
+  console.log("user: " + user);
+  console.log("user.data: " + user.data);
   console.log(`User: ${JSON.stringify(user, null, 2)}`);
   console.log(`User.data: ${JSON.stringify(user.data, null, 2)}`);
   console.log(
@@ -98,6 +98,7 @@ const BorrowedBooksCard = ({ book, bookDetails, setBookDetails }) => {
       2
     )}`
   );
+
   const newUser = { ...user.data };
   console.log(`newUser: ${JSON.stringify(newUser, null, 2)}`);
   console.log("books currently in newUser: " + newUser.books_currently);
