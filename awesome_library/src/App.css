@@ -3,9 +3,9 @@
   flex-direction: column;
   height: 100vh;
   max-width: 1400px;
-  margin-bottom: 100px;
-  /* width: 100vw; */
   align-items: center;
+  /* margin-bottom: 100px; */
+  /* width: 100vw; */
   /* overflow: scroll; */
 }
 
