@@ -154,7 +154,7 @@
   margin: 15px;
 }
 
-.lateWarning{
+.lateWarning {
   font-weight: bold;
   color: rgb(255, 255, 100);
   text-shadow: -2px 1px rgb(255, 0, 0);
@@ -208,5 +208,9 @@
 
   .header {
     margin-top: 35px;
+  }
+
+  .copy-card {
+    width: 80vw;
   }
 }
