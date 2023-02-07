@@ -2,6 +2,8 @@ import BorrowedBooksCard from "./BorrowedBooksCard.js";
 import { useContext } from "react";
 import { UserIDContext } from "../App.js";
 
+import _uniqueId from 'lodash/uniqueId';
+
 const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   const user = useContext(UserIDContext);
 
@@ -12,7 +14,8 @@ const BorrowedBooks = ({ bookDetails, setBookDetails }) => {
   );
 
   const borrowedBookList = borrowedBooks.map((book) => {
-    return <BorrowedBooksCard key={book.id} book={book} />;
+    const id = _uniqueId('prefix-');
+    return <BorrowedBooksCard key={id} book={book} />;
   });
 
   return (

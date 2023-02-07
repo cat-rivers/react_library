@@ -2,15 +2,6 @@ import React from "react";
 import "./Home.css";
 
 const Home = () => {
-//testi
-const d1=new Date();
-const d2=new Date("1922-02-02T00:00:00.000Z");
-
-console.log(d1);
-console.log(d2);
-console.log(d1<d2);
-console.log(d1>d2);
-
   return (
     <div>
       <h1 className="home-titledd"> The Awesome Library </h1>
