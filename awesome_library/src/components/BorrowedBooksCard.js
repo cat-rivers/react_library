@@ -11,7 +11,13 @@ const BorrowedBooksCard = ({ book }) => {
   const dueDate = borrowedCopy[0].due_date;
   const copyId = borrowedCopy[0].id;
   const bookIsLate = (new Date() > new Date(dueDate));
+  const dateToString=(date)=>{
+    const d = new Date(date);
+    return (d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear());
+  }
   
+  const renewable = dateToString(new Date(new Date().setDate(new Date().getDate() + 30))) !== dateToString(dueDate);
+
   const removeBookCard = () => {
     let bookTemp = book[0];
     bookTemp.copies = bookTemp.copies.map((bookCopy) =>
@@ -59,7 +65,7 @@ const BorrowedBooksCard = ({ book }) => {
       <div>
         {book[0].author}
         <br />
-        Due date: {dueDate.substring(0, 10)}
+        Due date: {dateToString(dueDate)}
         {bookIsLate &&
           <div className="lateWarning">PAST DUE DATE! - Please return or renew.</div>
         }
@@ -67,9 +73,10 @@ const BorrowedBooksCard = ({ book }) => {
       <button className="returnButton" onClick={removeBookCard}>
         Return book
       </button>
-      <button className="renewButton" onClick={renewBookLoan}>
-        Renew
-      </button>
+      {renewable
+        ? <button className="renewButton" onClick={renewBookLoan}>Renew</button>
+        : <button className="renewButtonGray">Renew</button>
+      }
     </div>
   );
 };
