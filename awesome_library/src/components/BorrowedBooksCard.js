@@ -34,6 +34,10 @@ const BorrowedBooksCard = ({ book }) => {
     editUser(userTemp, userTemp.id);
   };
 
+  const renewBookLoan = () => {
+    console.log("RENEW")
+  }
+  
   return (
     <div key={book[0].id} className="borrowedBook">
       <h3>{book[0].title}</h3>
@@ -44,6 +48,9 @@ const BorrowedBooksCard = ({ book }) => {
       </p>
       <button className="returnButton" onClick={removeBookCard}>
         Return book
+      </button>
+      <button className="renewButton" onClick={renewBookLoan}>
+        Renew
       </button>
     </div>
   );
