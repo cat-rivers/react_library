@@ -20,20 +20,20 @@
 }
 
 .searchResultsUnavailable {
-  cursor: pointer;
-  color: black;
-  font-size: 20px;
+  background-image: url("../images/grey_image.png");
+
   padding: 10px;
   margin-bottom: 15px;
   border: 3px solid black;
   text-align: center;
   margin-left: 5px;
   margin-right: 2px;
-  background-image: url("../images/halftonepattern.png");
   box-shadow: -3px 3px black;
   transition: margin 0.2s ease-in-out;
   max-width: 100%;
-  filter: grayscale(100%);
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
 }
 
 .searchResultsUnavailable:hover {
@@ -99,7 +99,7 @@
 }
 
 .copy-card {
-  width: 30vw;
+  width: 50vw;
   background-color: rgb(49, 141, 253);
   border: 3px solid black;
   margin-bottom: 15px;
