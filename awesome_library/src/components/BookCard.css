@@ -154,6 +154,13 @@
   margin: 15px;
 }
 
+.lateWarning{
+  font-weight: bold;
+  color: rgb(255, 255, 100);
+  text-shadow: -2px 1px rgb(255, 0, 0);
+  margin: 15px;
+}
+
 .not-logged-book {
   width: 30vw;
   padding: 15px 0 15px 0;

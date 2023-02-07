@@ -10,7 +10,8 @@ const BorrowedBooksCard = ({ book }) => {
   );
   const dueDate = borrowedCopy[0].due_date;
   const copyId = borrowedCopy[0].id;
-
+  const bookIsLate = (new Date() > new Date(dueDate));
+  
   const removeBookCard = () => {
     let bookTemp = book[0];
     bookTemp.copies = bookTemp.copies.map((bookCopy) =>
@@ -37,7 +38,8 @@ const BorrowedBooksCard = ({ book }) => {
   const renewBookLoan = () => {
     console.log("RENEW")
   }
-  
+
+
   return (
     <div key={book[0].id} className="borrowedBook">
       <h3>{book[0].title}</h3>
@@ -45,6 +47,9 @@ const BorrowedBooksCard = ({ book }) => {
         {book[0].author}
         <br />
         Due date: {dueDate.substring(0, 10)}
+        {bookIsLate &&
+          <div className="lateWarning">PAST DUE DATE - Renew or return!</div>
+        }
       </p>
       <button className="returnButton" onClick={removeBookCard}>
         Return book
