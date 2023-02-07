@@ -14,39 +14,26 @@
   height: 80px;
   letter-spacing: 3px;
   border: 2px solid black;
+  z-index: 9;
 }
 
-.navbar-links ul {
+.navbar ul {
   text-decoration: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-right: 10px;
+  z-index: 9;
 }
 
-.navbar-links li {
+.navbar li {
   margin-inline: 1em;
   list-style: none;
   color: rgb(255, 255, 255);
   font-family: "Bangers", cursive;
-
   text-shadow: -3px 3px black;
 }
 
-.navbar img {
-  width: 60px;
-  position: fixed;
-  left: 0;
-  top: 0;
-  margin-left: 25px;
-  margin-top: 12px;
-}
-
-@media (max-width: 650px) {
-  .navbar img {
-    display: none;
-  }
-}
-.navbar-links li:hover {
+.navbar li:hover {
   color: rgb(243, 251, 11);
 }
 
@@ -54,6 +41,7 @@
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+
 .navbar a:hover {
   color: rgb(243, 251, 11);
 }
@@ -61,4 +49,107 @@
 .dividing-bar {
   height: 2vh;
   background-color: rgb(26, 24, 24);
+}
+
+#hamburger-input {
+  display: none;
+}
+
+#hamburger-menu {
+  position: fixed;
+  top: 30px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  display: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  background: linear-gradient(
+    to bottom,
+    #3d0e61,
+    #3d0e61 20%,
+    rgb(227, 245, 255) 20%,
+    rgb(227, 245, 255) 40%,
+    #3d0e61 40%,
+    #3d0e61 60%,
+    rgb(227, 245, 255) 60%,
+    rgb(227, 245, 255) 80%,
+    #3d0e61 80%,
+    #3d0e61 100%
+  );
+}
+/* rgba(227, 245, 255, 0.4), */
+#hamburger-menu #sidebar-menu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 200px;
+  height: 100%;
+  background-color: #3d0e61;
+  transition: 0.3s;
+  padding: 0px 10px;
+  box-sizing: border-box;
+}
+
+#hamburger-menu h3 {
+  color: #b9faf8;
+  font-size: 2.2rem;
+}
+
+#hamburger-menu ul {
+  padding-left: 0px;
+}
+
+#hamburger-menu li {
+  list-style-type: none;
+  line-height: 3rem;
+  color: #b9faf8;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#hamburger-menu a {
+  color: #b9faf8;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
+#hamburger-menu a:hover {
+  text-decoration: underline;
+}
+
+#hamburger-input:checked + #hamburger-menu #sidebar-menu {
+  visibility: visible;
+  left: 0;
+}
+
+#hamburger-input:checked ~ .overlay {
+  visibility: visible;
+  opacity: 0.4;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+  background: black;
+  z-index: -1;
+}
+
+@media screen and (max-width: 750px) {
+  .navbar {
+    display: none;
+  }
+  #hamburger-menu {
+    display: inline;
+  }
 }
