@@ -213,4 +213,18 @@
   .copy-card {
     width: 80vw;
   }
+
+  .renewButton {
+    width: 80%;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .returnButton {
+    width: 80%;
+  }
+
+  .borrowedBook {
+    width: 80vw;
+  }
 }
