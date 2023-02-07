@@ -51,6 +51,21 @@
   background-color: rgb(26, 24, 24);
 }
 
+.navbar img {
+  width: 60px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-left: 25px;
+  margin-top: 12px;
+}
+
+@media (max-width: 650px) {
+  .navbar img {
+    display: none;
+  }
+}
+
 #hamburger-input {
   display: none;
 }
