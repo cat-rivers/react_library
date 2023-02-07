@@ -12,7 +12,7 @@ const MyPage = ({ bookDetails, setBookDetails }) => {
         <h2>You are not logged in.</h2>
       ) : (
         <div>
-          <h2>Hello {user.data.name}!</h2>
+          <h2 className="logged-name">Hello {user.data.name}!</h2>
           <h3>Login ID: {user.data.id}</h3>
           <p id="keep-id-safe-message">
             Keep your ID number in a safe place. You will need this to login.

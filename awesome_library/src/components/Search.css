@@ -57,3 +57,27 @@
   margin-top: 25px;
   width: 80%;
 }
+
+@media (max-width: 650px) {
+  .search-section {
+    width: 90vw;
+  }
+
+  .results {
+    width: 100%;
+  }
+
+  #search-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 120px;
+  }
+
+  .search-btn {
+    width: 75%;
+  }
+
+  #search-form input {
+    width: 75%;
+  }
+}
