@@ -1,12 +1,14 @@
-import BookCopyCard from "./BookCopyCard";
+import SearchBookCopyCard from "./SearchBookCopyCard";
 import "./BookCard.css";
 import { useState } from "react";
 import Modal from "react-modal";
 
-const BookCard = ({ book }) => {
+const SearchBookCard = ({ book }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   Modal.setAppElement("#root");
   const closeModal = () => setModalIsOpen(false);
+  const available =
+    book.copies.find(copy => copy.status === "in_library") !== undefined;
 
   const customStyles = {
     content: {
@@ -15,7 +17,6 @@ const BookCard = ({ book }) => {
       textAlign: "center",
       backgroundColor: "white",
       border: "5px solid black",
-      overflow: "scroll",
     },
   };
 
@@ -31,11 +32,11 @@ const BookCard = ({ book }) => {
             <h3>{book.title}</h3>
             <p>{book.published.substr(0, 4)}</p>
           </div>
-          <p>{book.description}</p>
+          <p className="book-description">{book.description}</p>
         </div>
         <div className="bookStatus">
           <h4>Copies:</h4>
-          <BookCopyCard book={book} />
+          <SearchBookCopyCard book={book} />
         </div>
       </div>
     );
@@ -44,12 +45,19 @@ const BookCard = ({ book }) => {
   const bookPreviewCard = () => {
     return (
       <div
-        className="searchResults"
         onClick={() => {
           setModalIsOpen(true);
         }}
       >
-        {book.author}: {book.title}
+        {available === true ? (
+          <div className="searchResults">
+            {book.author}: {book.title}
+          </div>
+        ) : (
+          <div className="searchResultsUnavailable">
+            {book.author}: {book.title}
+          </div>
+        )}
       </div>
     );
   };
@@ -69,4 +77,4 @@ const BookCard = ({ book }) => {
   );
 };
 
-export default BookCard;
+export default SearchBookCard;

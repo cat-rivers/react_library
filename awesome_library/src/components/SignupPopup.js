@@ -88,7 +88,7 @@ const SignupPopup = () => {
               type="password"
               id="password"
               name="password"
-              required="true"
+              required={true}
             />
             <br />
             <br />
