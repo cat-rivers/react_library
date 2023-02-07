@@ -60,6 +60,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-top: 25px;
 }
 
 .header p {
@@ -240,5 +241,8 @@
 
   .borrowedBook {
     width: 80vw;
+  }
+  .close-btn {
+    margin-bottom: 15px;
   }
 }
