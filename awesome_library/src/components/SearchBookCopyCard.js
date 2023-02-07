@@ -31,9 +31,11 @@ const SearchBookCopyCard = ({ book }) => {
   };
 
   const statusBorrowed = (copy) => {
+    const d = new Date(copy.due_date);
+    const ddate = d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear();
     return (
       <div key={copy.id} className="unavailable-copy">
-        <p>Unavailable - Return date {copy.due_date.substring(0, 10)}</p>
+        <p>Unavailable - Return date {ddate}</p>
       </div>
     );
   };
