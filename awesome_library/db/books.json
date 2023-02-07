@@ -187,30 +187,6 @@
           "status": "in_library",
           "borrower_id": null,
           "due_date": null
-        },
-        {
-          "id": "12",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
-        },
-        {
-          "id": "13",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
-        },
-        {
-          "id": "14",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
-        },
-        {
-          "id": "15",
-          "status": "in_library",
-          "borrower_id": null,
-          "due_date": null
         }
       ]
     }

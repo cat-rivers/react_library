@@ -11,7 +11,10 @@ const Header = () => {
   return (
     <div>
       <nav className="navbar">
-        <img src={require("../images/book-svg.png")}></img>
+        <Link to={"/"}>
+          {" "}
+          <img src={require("../images/book-svg.png")}></img>
+        </Link>
 
         {/*<div className="navbar-links">*/}
         <ul className="links" id="links">
