@@ -21,6 +21,12 @@
 
   .bodyContainer {
     grid-template-columns: 1fr;
+    margin: 20px;
+  }
+
+  .home-title {
+    margin-top: 95px;
+    font-size: 60px;
   }
 }
 
@@ -51,4 +57,8 @@ h2 {
 #keep-id-safe-message {
   font-weight: bold;
   font-size: 20px;
+}
+
+.logged-name {
+  margin-top: 95px;
 }
