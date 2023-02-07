@@ -19,7 +19,7 @@
   margin-right: 0px;
 }
 
-.searchResultsUnavailable{
+.searchResultsUnavailable {
   cursor: pointer;
   color: black;
   font-size: 20px;
@@ -40,7 +40,6 @@
   margin-left: 7px;
   margin-right: 0px;
 }
-
 
 .close-btn {
   margin: 25px;
@@ -94,6 +93,7 @@
 .bookStatus {
   display: flex;
   flex-direction: column;
+
   align-items: center;
   letter-spacing: 1px;
 }
@@ -147,6 +147,7 @@
 
   margin-bottom: 15px;
   color: white;
+  box-shadow: -3px 3px black;
 }
 
 .unavailable-copy {
@@ -156,4 +157,34 @@
   margin-bottom: 15px;
   color: rgb(42, 40, 40);
   box-shadow: -3px 3px black;
+}
+
+@media (max-width: 650px) {
+  .book-description {
+    display: none;
+  }
+
+  .book-card {
+    width: 80vw;
+  }
+
+  .unavailable-copy {
+    width: inherit;
+  }
+
+  .not-logged-book {
+    width: 80vw;
+  }
+
+  .bookStatus {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .header {
+    margin-top: 35px;
+  }
 }
