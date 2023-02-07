@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 30vw;
+  width: 30vw;
   /* width: 15vw;
   height: 25vh; */
   padding: 5px;
@@ -59,4 +59,14 @@
 
 .logout-btn:hover {
   background-color: rgb(57, 181, 230);
+}
+
+@media (max-width: 650px) {
+  .logout-modal {
+    width: 80vw;
+  }
+
+  .logout-btn {
+    width: 80%;
+  }
 }

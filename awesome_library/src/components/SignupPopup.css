@@ -42,3 +42,13 @@
   width: 50%;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 2px 3px 0 rgba(0, 0, 0, 0.19);
 }
+
+@media (max-width: 650px) {
+  .signup-modal {
+    width: 80vw;
+  }
+
+  .submit-btn {
+    width: 80%;
+  }
+}
