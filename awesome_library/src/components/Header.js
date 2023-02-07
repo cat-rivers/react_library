@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div>
       <nav className="navbar">
-        <div className="navbar-links">
+        {/*<div className="navbar-links">*/}
           <ul className="links" id="links">
             {userData.data ? (
               <>
@@ -49,11 +49,37 @@ const Header = () => {
               </>
             )}
           </ul>
-        </div>
+        {/*</div>*/}
       </nav>
       <div className="dividing-bar"></div>
 
       <Outlet />
+      
+      <input type="checkbox" id="hamburger-input" class="burger-shower" />
+      <label id = "hamburger-menu" for="hamburger-input">
+        <nav id = "sidebar-menu">
+          <h3> Menu </h3>
+          <ul className="links" id="links">
+          {userData.data ? (
+              <>
+                <li> <Link to="/">Home</Link> </li>
+                <li> <Link to="/search">Search</Link> </li>
+                <li> <Link to="/mypage">My Page</Link> </li>
+                <li> <LogoutPopup /> </li>
+              </>
+            ) : (
+              <>
+                <li> <Link to="/" style={{ textDecoration: "none" }}> Home </Link> </li>
+                <li> <Link to="/search" style={{ textDecoration: "none" }}> Search </Link> </li>
+                <li> < LoginPopup /> </li>
+                <li> < SignupPopup /> </li>
+              </>
+            )}
+          </ul>
+        </nav>
+      </label>
+
+      <div className="overlay"></div>
     </div>
   );
 };
