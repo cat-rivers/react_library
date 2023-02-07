@@ -19,7 +19,7 @@
     display: none;
   }
 
-  .bodyContainer{
+  .bodyContainer {
     grid-template-columns: 1fr;
   }
 }
